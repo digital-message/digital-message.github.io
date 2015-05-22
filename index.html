@@ -8,6 +8,7 @@
   <style>
   * {
     font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    text-decoration: none;
   }
   h1 {
     text-align: center;
@@ -39,6 +40,7 @@
     margin-right: -4px;
     display: inline-block;
   }
+
   </style>
   <title>數碼訊息 | Digital Message</title>
 </head>
@@ -54,5 +56,24 @@
   <h1>Digital Message</h1>
   數碼訊息有限公司 | Digital Message LLC. <br/>
   &copy; 2015
+<a href="mailto:info@digital-message.com">info@digital-message.com</a>
+<script>
+
+var dots = document.getElementsByClassName('dot');
+var delay = 1000;
+function blink(x, y) {
+  setTimeout(function() {
+    dots[0].style.opacity = x;
+    dots[1].style.opacity = y;
+  }, delay += 200);
+}
+
+blink(0, 1);
+blink(1, 0);
+blink(0, 1);
+blink(1, 0);
+blink(0, 1);
+blink(1, 1);
+</script>
 </body>
 </html>
