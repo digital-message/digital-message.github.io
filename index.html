@@ -1,79 +1,14 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="icon" href="dm.png">
-  <link rel="apple-touch-icon" href="dm.png">
-  <style>
-  * {
-    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-    text-decoration: none;
-  }
-  h1 {
-    text-align: center;
-    font-size: 24px;
-  }
-
-  #logo {
-    width: 64px;
-    height: 64px;
-    border: 1px solid;
-    margin: auto;
-  }
-
-  div.bar {
-    width: 24px;
-    height: 10px;
-    background: black;
-    margin-top: 10px;
-    margin-left: 4px;
-    display: inline-block;
-  }
-
-  div.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background: black;
-    margin-top: 15px;
-    margin-left: 4px;
-    margin-right: -4px;
-    display: inline-block;
-  }
-
-  </style>
-  <title>Digital Message, LLC</title>
-</head>
-<body>
-  <div id="logo">
-    <div class="bar"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div> 
-  <h1>Learn + Research + Develop</h1>
-  
-  Digital Message LLC.  &copy; 2015
-<a href="mailto:info@digital-message.com">Contact</a>
-<script>
-
-var dots = document.getElementsByClassName('dot');
-var delay = 1000;
-function blink(x, y) {
-  setTimeout(function() {
-    dots[0].style.opacity = x;
-    dots[1].style.opacity = y;
-  }, delay += 200);
-}
-
-blink(0, 1);
-blink(1, 0);
-blink(0, 1);
-blink(1, 0);
-blink(0, 1);
-blink(1, 1);
-</script>
-</body>
-</html>
+---
+layout: default
+title: Learn + Research + Grow
+---
+<center>
+  <svg width="300" height="300">
+    <ellipse cx="150" cy="100" rx="80" ry="80" fill="rgba(200,0,0,0.5)" />
+    <ellipse cx="100" cy="186" rx="80" ry="80" fill="rgba(0,200,0,0.5)" />
+    <ellipse cx="200" cy="186" rx="80" ry="80" fill="rgba(0, 0,200,0.5)" />
+    <text x="125" y="100">Learn</text>
+    <text x="60" y="190">Research</text>
+    <text x="180" y="190">Grow</text>
+  </svg>
+</center>
