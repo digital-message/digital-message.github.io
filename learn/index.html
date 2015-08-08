@@ -3,6 +3,41 @@ layout: default
 title: Learn
 ---
 <h1>Learn</h1>
+
+<center>
+  <svg width="300" height="300">
+    <g transform="translate(110, 180) scale(0.4,-0.4)">
+      <line x1="0" y1="0" x2="200" y2="0" stroke="red" stroke-width="6">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="60" dur="3s" repeatCount="1" />
+      </line>
+      <line x1="0" y1="0" x2="200" y2="0" stroke="blue" stroke-width="6" transform="rotate(60)" opacity="0">
+        <animate attributeName="opacity" from="1" to="1" dur="1s" begin="3s" repeatCount="1" fill="freeze"/>
+        <animateTransform attributeName="transform" type="rotate" from="60" to="120" dur="3s" begin="3s" repeatCount="1" />
+      </line>
+      <g>
+        <line x1="0" y1="0" x2="200" y2="0" stroke-dasharray="5, 5" stroke="green" stroke-width="6" transform="rotate(120)" opacity="0">
+        <animate attributeName="opacity" from="1" to="1" dur="1s" begin="6s" repeatCount="1" fill="freeze"/>
+        </line>
+        <animateTransform attributeName="transform" type="translate" from="0" to="200" dur="3s" begin="6s" repeatCount="1" fill="freeze"/>
+      </g>
+      <line x1="0" y1="0" x2="200" y2="0" stroke="green" stroke-width="6" transform="translate(200,0) rotate(120)" opacity="0">
+        <animate attributeName="opacity" from="1" to="1" dur="1s" begin="9s" repeatCount="1" fill="freeze"/>
+        </line>
+      <text x="0" y="0" transform="translate(-20, -20) scale(2,-2)">
+        A
+      </text>
+      <ellipse cx="0" cy="0" rx="200" ry="200" fill="none" stroke="black" stroke-dasharray="6,4" />
+      <text x="100" y="0" transform="translate(0, -20) scale(2,-2)">
+        B
+      </text>
+      <ellipse cx="0" cy="0" rx="200" ry="200" fill="none" stroke="black" stroke-dasharray="6,4" transform="translate(200)" />
+      <text x="100" y="0" transform="scale(2,-2) translate(-50, -90) ">
+        C
+      </text>
+      <ellipse cx="0" cy="0" rx="200" ry="200" fill="none" stroke="brown" stroke-dasharray="6,2" transform=" rotate(60) translate(200, 0)" />
+    </g>
+  </svg>
+</center>
 <quote>
 To gain knowledge or skill by studying, practicing, being taught, or experiencing something
 </quote>
