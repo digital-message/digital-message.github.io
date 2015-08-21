@@ -6,13 +6,34 @@ title: Research
 Research
 </h1>
 
-$$ \nabla\cdot{\bf D} = \rho $$
-
-$$ \nabla\cdot{\bf B} = 0 $$
-
-$$ \nabla\times{\bf E} = - {{\partial{\bf B}}\over{\partial t}} $$
-
-$$ \nabla\times{\bf H} = {\bf J} + {{\partial{\bf D}}\over{\partial t}} $$
+<center>
+  <svg width="210" height="210" style="background:ivory">
+    <defs>
+      <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+        <rect x="0" y="0" width="10" height="10" fill="none" stroke="lightblue" />
+      </pattern>
+    </defs>
+    <defs>
+      <marker id="Triangle" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+        <polygon points="0,0 10,5 0,10" />
+      </marker>
+    </defs>
+    <g transform="translate(10, 10) ">
+      <rect x="0" y="0" width="200" height="200" fill="url(#grid)" />
+      <line x1="0" y1="100" x2="100" y2="100" stroke="black" marker-end="url(#Triangle)" />
+      <line x1="200" y1="200" x2="100" y2="0" stroke="black" marker-end="url(#Triangle)" />
+      <text x="100" y="100" transform="translate(5,-5) ">
+        (0, 0)
+      </text>
+      <text x="200" y="100" transform="translate(-10,-5) ">
+        x
+      </text>
+      <text x="100" y="0" transform="translate(-15, 10) ">
+        y
+      </text>
+    </g>
+  </svg>
+</center>
 
 <quote>
 To investigate systematically into materials and sources in order to establish facts and reach new conclusions
