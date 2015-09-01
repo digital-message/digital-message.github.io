@@ -2,16 +2,21 @@
   <a href="/">
     <div id="home-logo">
       <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
-<svg width="64" height="64">
-  <g transform="translate(2,2)">
-    <rect x="0" y="0" width="60" height="60" fill="none" stroke="black" stroke-width="2" />
-    <rect x="4" y="12" width="24" height="12" fill="black" stroke="none" />
-    <rect x="4" y="36" width="24" height="12" fill="black" stroke="none" />
-    <rect x="32" y="36" width="24" height="12" fill="black" stroke="none" />
-    <circle cx="38" cy="18" r="5.5" fill="black" stroke="none"></circle>
-    <circle cx="50" cy="18" r="5.5" fill="black" stroke="none"></circle>
-  </g>
-</svg>
+      <svg width="64" height="64">
+        <g transform="translate(2,2)">
+          <rect x="0" y="0" width="60" height="60" fill="none" stroke="black" stroke-width="2" />
+          <rect x="4" y="12" width="24" height="12" fill="black" stroke="none" />
+          <rect x="4" y="36" width="24" height="12" fill="black" stroke="none" />
+          <rect x="32" y="36" width="24" height="12" fill="black" stroke="none" />
+          <circle cx="38" cy="18" r="5.4" fill="red" stroke="none" opacity="1">
+            <animate attributeName="cx" from="38" to="50" dur="0.5s" begin="0" repeatCount="3" />
+            <animate attributeName="fill" from="red" to="black" dur="0.1s" begin="2" repeatCount="1" fill="freeze" />
+          </circle>
+          <circle cx="50" cy="18" r="5.4" fill="black" stroke="none" opacity="0">
+            <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="2" repeatCount="1" fill="freeze" />
+          </circle>
+        </g>
+      </svg>
     </div>
   </a>
   <span>
