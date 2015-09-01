@@ -1,31 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta content="https://www.digital-message.com/dm.png" property="og:image">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@digitmsg">
-    <meta name="twitter:title" content="{{ page.title }}">
-    <meta name="twitter:description" content="...">
-    <meta name="twitter:image" content="https://www.digital-message.com/dm.png">
-
-    <link href="/dm.png" rel="shortcut icon" type="image/x-icon">
-    <link href="/dm.png" rel="icon" >
-    <link href="/dm.png" rel="apple-touch-icon">
-    <style>
-      * {font-family:Copperplate,"Copperplate Gothic Light",fantasy;text-decoration:none;}
-      a:link {color: black;}
-      a:visited {color: black;}
-      a:hover {color: black;}
-      a:active {color: black;}
-      #nav {width: 100% height:70px;}
-      #nav span {font-size:20px;}
-      #home-logo {width:64px;height:64px;border:1px solid;margin:auto;text-decoration:none;display:inline-block;} 
-      #home-logo div.bar{width:24px;height:10px;background:black;margin-top:10px;margin-left:4px;display:inline-block;}
-      #home-logo div.dot{width:10px;height:10px;border-radius:10px;background:black;margin-top:15px;margin-left:4px;margin-right:-4px;display:inline-block;}
-      #footer { margin-top:40px;}
-    </style>
+    {% include meta.html %}
+    {% include style.html %}
     <title>{{ page.title }} | Digital Message</title>
     {% include jquery.html %}
   </head>
