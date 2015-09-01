@@ -2,31 +2,19 @@
   <a href="/">
     <div id="home-logo">
       <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
-      <div class="bar"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+<svg width="64" height="64">
+  <g transform="translate(2,2)">
+    <rect x="0" y="0" width="60" height="60" fill="none" stroke="black" stroke-width="2" />
+    <rect x="4" y="12" width="24" height="12" fill="black" stroke="none" />
+    <rect x="4" y="36" width="24" height="12" fill="black" stroke="none" />
+    <rect x="32" y="36" width="24" height="12" fill="black" stroke="none" />
+    <circle cx="38" cy="18" r="5.5" fill="black" stroke="none"></circle>
+    <circle cx="50" cy="18" r="5.5" fill="black" stroke="none"></circle>
+  </g>
+</svg>
     </div>
   </a>
   <span>
     <a href="/learn">Learn</a> + <a href="/research">Research</a> + <a href="/develop">Develop</a>
   </span>
 </div>
-<script>
-  var dots = document.getElementsByClassName('dot');
-  var delay = 1000;
-  function blink(x, y) {
-    setTimeout(function() {
-      dots[0].style.opacity = x;
-      dots[1].style.opacity = y;
-    }, delay += 200);
-  }
-
-  blink(0, 1);
-  blink(1, 0);
-  blink(0, 1);
-  blink(1, 0);
-  blink(0, 1);
-  blink(1, 1);
-</script>
