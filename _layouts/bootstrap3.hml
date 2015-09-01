@@ -4,6 +4,7 @@
     {% include meta.html %}
     {% include icon.html %}
     <title>{{ page.title }} | Digital Message</title>
+    {% include jquery.html %}
     {% include bootstrap3.html %}
     {% include style.html %}
   </head>
