@@ -1,0 +1,12 @@
+---
+layout: mathjax
+title: MathJax
+---
+<h1 id="title">Sandbox</h1>
+<div>
+Quadratic formula $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+</div>
+<script>
+document.title = '{{ page.title }}-' + MathJax.version;
+document.getElementById('title').innerHTML = document.title;
+</script>
