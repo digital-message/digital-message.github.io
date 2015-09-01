@@ -1,31 +1,8 @@
 <div id="nav">
   <a href="/">
-    <div id="home-logo">
-      <div class="bar"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
+    <img src="/icon.png" width="64" height="64"/>
   </a>
   <span>
     <a href="/learn">Learn</a> + <a href="/research">Research</a> + <a href="/develop">Develop</a>
   </span>
 </div>
-<script>
-  var dots = document.getElementsByClassName('dot');
-  var delay = 1000;
-  function blink(x, y) {
-    setTimeout(function() {
-      dots[0].style.opacity = x;
-      dots[1].style.opacity = y;
-    }, delay += 200);
-  }
-
-  blink(0, 1);
-  blink(1, 0);
-  blink(0, 1);
-  blink(1, 0);
-  blink(0, 1);
-  blink(1, 1);
-</script>
