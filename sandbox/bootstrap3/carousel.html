@@ -16,20 +16,11 @@ slide_types:
   - technics
   - transport
 ---
-<div class="container">
+<div class="container-fluid">
   <div class="page-header">
     <h1>Carousel</h1>
   </div>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      {% for item in page.slide_types %}
-        {% if forloop.first == true %}
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        {% else %}
-          <li data-target="#carousel-example-generic" data-slide-to=" {{ forloop.index0 }} "></li>
-        {% endif %}
-      {% endfor %}
-    </ol>
     <div class="carousel-inner" role="listbox">
       {% for item in page.slide_types %}
         {% if forloop.first == true %}
