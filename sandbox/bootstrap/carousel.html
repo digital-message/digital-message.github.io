@@ -1,0 +1,44 @@
+---
+layout: bootstrap
+title: Bootstrap Carousel
+slide_types:
+  - abstract
+  - animals
+  - business
+  - cats
+  - city
+  - food
+  - nightlife
+  - fashion
+  - people
+  - nature
+  - sports
+  - technics
+  - transport
+---
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Carousel</h1>
+  </div>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+      {% for item in page.slide_types %}
+        {% if forloop.first == true %}
+          <div class="item active">
+        {% else %}
+          <div class="item">
+        {% endif %}
+          <img src="http://lorempixel.com/1140/500/{{ item }}" alt="slide # {{ forloop.index }}">
+        </div>
+      {% endfor %}
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
