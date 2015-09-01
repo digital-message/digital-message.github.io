@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta content="https://www.digital-message.com/dm.png" property="og:image">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@digitmsg">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="...">
+    <meta name="twitter:image" content="https://www.digital-message.com/dm.png">
+
+    <link href="/dm.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/dm.png" rel="icon" >
+    <link href="/dm.png" rel="apple-touch-icon">
+    <style>
+      * {font-family:Copperplate,"Copperplate Gothic Light",fantasy;text-decoration:none;}
+      a:link {color: black;}
+      a:visited {color: black;}
+      a:hover {color: black;}
+      a:active {color: black;}
+      #nav {width: 100% height:70px;}
+      #nav span {font-size:20px;}
+      #home-logo {width:64px;height:64px;border:1px solid;margin:auto;text-decoration:none;display:inline-block;} 
+      #home-logo div.bar{width:24px;height:10px;background:black;margin-top:10px;margin-left:4px;display:inline-block;}
+      #home-logo div.dot{width:10px;height:10px;border-radius:10px;background:black;margin-top:15px;margin-left:4px;margin-right:-4px;display:inline-block;}
+      #footer { margin-top:40px;}
+    </style>
+    <title>{{ page.title }} | Digital Message</title>
+    {% include jquery.html %}
+  </head>
+  <body>
+    <div id="nav">
+      <a href="/">
+        <div id="home-logo">
+            <div class="bar"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+      </a>
+      <span>
+        <a href="/learn">Learn</a> + <a href="/research">Research</a> + <a href="/develop">Develop</a>
+      </span>
+    </div>
+    {{ content }}
+    <div id="footer">
+      Digital Message LLC. &copy; 2015 |
+      <a href="/cdn-cgi/l/email-protection#1d74737b725d79747a74697c713070786e6e7c7a78337e7270">Contact</a>
+    </div>
+    <script>
+      var dots = document.getElementsByClassName('dot');
+      var delay = 1000;
+      function blink(x, y) {
+        setTimeout(function() {
+        dots[0].style.opacity = x;
+        dots[1].style.opacity = y;
+      }, delay += 200);
+    }
+
+    blink(0, 1);
+    blink(1, 0);
+    blink(0, 1);
+    blink(1, 0);
+    blink(0, 1);
+    blink(1, 1);
+  </script>
+  <script type="text/javascript">
+    /* <![CDATA[ */
+    (function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+    /* ]]> */
+    </script>
+  </body>
+</html>
