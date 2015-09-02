@@ -1,8 +1,4 @@
-<style>
-h1 {
-  text-align: center;
-}
-</style>
+<style></style>
 <body>
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
 <h1 id="title">Sandbox</h1>
@@ -16,8 +12,8 @@ function meta(data) {
   }
   head.insertBefore( element, head.firstChild );
 }
-document.getElementById('title').innerHTML = "sandbox/plain";
-document.title = "It works!";
+document.getElementById('title').innerHTML = eval('navigator.appVersion');
+document.title = "sandbox/plain";
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
 meta({"charset": "UTF-8"});
 </script>
