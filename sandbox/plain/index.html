@@ -11,7 +11,7 @@ function meta(data) {
   for (var k in data) {
     element.setAttribute(k, data[k]);
   }
-  document.head.appendChild(element);
+  document.head.prependChild(element);
 }
 
 document.getElementById('title').innerHTML = "It works!";
