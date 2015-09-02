@@ -23,7 +23,7 @@ function el(tag, attr, style) {
   return element;
 }
 
-document.title = "It works!";
+document.title = "sandbox/plain/eval";
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
 meta({"charset": "UTF-8"});
 var output = el('div',
@@ -37,7 +37,7 @@ document.body.appendChild(output);
 
 var input = el('input', 
                {
-                 "placeholder": "Type some thing"
+                 "placeholder": "Type some JavaScript expression"
                },
                {
                  "position": "absolute",
@@ -49,7 +49,7 @@ var input = el('input',
                });
 document.body.appendChild(input);
 
-input.onchange = function (e) {
+function evaluate(s) {
     var entry = el('div', {}, 
                  {
                    "fontSize": "18px",
@@ -58,9 +58,15 @@ input.onchange = function (e) {
                    "borderRadius": "3px",
                    "border": "1px solid #0E0"
                  });
-    entry.innerHTML = this.value + ':<br/>' + eval(this.value);
+    entry.innerHTML = s + ':<br/>' + eval(s);
     output.appendChild(entry);
     output.scrollTop = output.scrollHeight;
+}
+
+input.onchange = function (e) {
+    evaluate(this.value);
     this.value = '';
 }
+
+evaluate('navigator.appVersion');
 </script>
