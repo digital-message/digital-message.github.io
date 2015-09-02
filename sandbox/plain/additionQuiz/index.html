@@ -37,7 +37,8 @@ document.body.appendChild(output);
 
 var input = el('input', 
                {
-                 "placeholder": "Your answer"
+                 "placeholder": "Your answer",
+                 "type": "number"
                },
                {
                  "position": "absolute",
@@ -56,6 +57,7 @@ function ask() {
   var entry = el('div', {}, 
                  {
                    "fontFamily": "monospace",
+                   "fontSize": "18px",
                    "width": "80%",
                    "margin": "1rem",
                    "marginLeft": "5%",
@@ -73,6 +75,7 @@ function check(a) {
   var entry = el('div', {}, 
                  {
                    "fontFamily": "monospace",
+                   "fontSize": "18px",
                    "width": "80%",
                    "margin": "1rem",
                    "marginLeft": "5%",
