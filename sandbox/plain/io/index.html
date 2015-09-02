@@ -1,0 +1,66 @@
+<style> body { padding: 0; margin: 0} </style>
+<body>
+<img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
+</body>
+<script>
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+function el(tag, attr, style) {
+  var element = document.createElement(tag);
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  } 
+  for (var k in style) {
+    element.style[k] = style[k];
+  } 
+  return element;
+}
+
+document.title = "sandbox/plain/io";
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+var output = el('div',
+                { 
+                }, 
+                { 
+                  "height": "80%",
+                  "overflow": "scroll"
+                });
+document.body.appendChild(output);
+
+var input = el('input', 
+               {
+                 "placeholder": "Type some thing"
+               },
+               {
+                 "position": "absolute",
+                 "width": "90%",
+                 "left": "5%",
+                 "right": "5%",
+                 "bottom": "10px",
+                 "fontSize": "18px"
+               });
+document.body.appendChild(input);
+
+input.onchange = function (e) {
+    var entry = el('div', {}, 
+                 {
+                   "fontSize": "18px",
+                   "margin": "1rem",
+                   "padding": "0.1em",
+                   "borderRadius": "3px",
+                   "border": "1px solid #0E0"
+                 });
+    entry.innerHTML = this.value;
+    output.appendChild(entry);
+    output.scrollTop = output.scrollHeight;
+    this.value = '';
+}
+</script>

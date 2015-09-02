@@ -1,0 +1,28 @@
+<style>
+input {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  bottom: 10px;
+  font-size: 18px;
+}
+</style>
+<img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
+<input id="input" value="Sandbox"></input>
+<script>
+
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+document.getElementById('input').value = "It works!";
+document.title = "sandbox/plain/input";
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+</script>
