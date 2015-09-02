@@ -8,14 +8,15 @@ h1 {
 
 function meta(data) {
   var element = document.createElement('meta');
+  var head = document.head;
   for (var k in data) {
     element.setAttribute(k, data[k]);
   }
-  document.head.prependChild(element);
+  head.insertBefore( element, head.firstChild );
 }
 
 document.getElementById('title').innerHTML = "It works!";
 document.title = "It works!";
-meta({"charset": "UTF-8"});
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
 </script>
