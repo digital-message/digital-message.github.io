@@ -1,0 +1,26 @@
+<style>
+input {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  font-size: 18px;
+}
+</style>
+<input id="input" value="Sandbox"></input>
+<script>
+
+function meta(data) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in data) {
+    element.setAttribute(k, data[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+document.getElementById('input').value = "It works!";
+document.title = "It works!";
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+</script>
