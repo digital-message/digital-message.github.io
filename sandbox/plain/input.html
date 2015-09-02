@@ -1,8 +1,9 @@
 <style>
 input {
   position: absolute;
-  left: 10px;
-  right: 10px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
   bottom: 10px;
   font-size: 18px;
 }
@@ -10,11 +11,11 @@ input {
 <input id="input" value="Sandbox"></input>
 <script>
 
-function meta(data) {
+function meta(attr) {
   var element = document.createElement('meta');
   var head = document.head;
-  for (var k in data) {
-    element.setAttribute(k, data[k]);
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
   }
   head.insertBefore( element, head.firstChild );
 }
