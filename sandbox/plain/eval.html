@@ -50,16 +50,31 @@ var input = el('input',
 document.body.appendChild(input);
 
 function evaluate(s) {
-    var entry = el('div', {}, 
+    var input_entry = el('div', {}, 
                  {
                    "fontSize": "18px",
+                   "width": "50%",
                    "margin": "1rem",
-                   "padding": "0.1em",
+                   "marginLeft": "45%",
+                   "padding": "0.2em",
                    "borderRadius": "3px",
-                   "border": "1px solid #0E0"
+                   "background": "#abc"
                  });
-    entry.innerHTML = s + ':<br/>' + eval(s);
-    output.appendChild(entry);
+    input_entry.innerHTML = 'js> ' + s;
+    output.appendChild(input_entry);
+
+    var output_entry = el('div', {}, 
+                 {
+                   "fontSize": "18px",
+                   "width": "50%",
+                   "marginLeft": "5%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "border": "1px solid #abc"
+                 });
+    output_entry.innerHTML = eval(s);
+    output.appendChild(output_entry);
+
     output.scrollTop = output.scrollHeight;
 }
 
