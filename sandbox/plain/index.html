@@ -5,6 +5,16 @@ h1 {
 </style>
 <h1 id="title">Sandbox</h1>
 <script>
+
+function meta(data) {
+  for (var k in data) {
+    element.setAttribute(k, data[k]);
+  }
+  document.head.appendChild(element);
+}
+
 document.getElementById('title').innerHTML = "It works!";
 document.title = "It works!";
+meta({"charset": "UTF-8"});
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
 </script>
