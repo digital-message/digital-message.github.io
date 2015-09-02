@@ -1,0 +1,15 @@
+---
+layout: babel-core
+title: babel-core
+---
+<div id="test"><div>
+<script type="text/babel">
+class Test {
+  test() {
+    return "test";
+  }
+}
+
+var test = new Test;
+document.getElementById('test').innerHTML=test.test(); // "test"
+</script>
