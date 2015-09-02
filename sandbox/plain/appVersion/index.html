@@ -1,7 +1,7 @@
 <style></style>
 <body>
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
-<h2 id="title">Sandbox</h2>
+<h2 id="version">Sandbox</h2>
 </body>
 <script>
 function meta(data) {
@@ -12,8 +12,8 @@ function meta(data) {
   }
   head.insertBefore( element, head.firstChild );
 }
-document.getElementById('title').innerHTML = eval('navigator.appVersion');
-document.title = "appVersion";
+document.getElementById('version').innerHTML = eval('navigator.appVersion');
+document.title = document.location.pathname;
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
 meta({"charset": "UTF-8"});
 </script>
