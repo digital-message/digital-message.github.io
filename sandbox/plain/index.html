@@ -3,8 +3,10 @@ h1 {
   text-align: center;
 }
 </style>
+<body>
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
 <h1 id="title">Sandbox</h1>
+</body>
 function meta(data) {
   var element = document.createElement('meta');
   var head = document.head;
@@ -13,7 +15,6 @@ function meta(data) {
   }
   head.insertBefore( element, head.firstChild );
 }
-
 document.getElementById('title').innerHTML = "It works!";
 document.title = "It works!";
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
