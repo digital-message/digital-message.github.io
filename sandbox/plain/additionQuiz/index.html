@@ -37,7 +37,7 @@ document.body.appendChild(output);
 
 var input = el('input', 
                {
-                 "placeholder": "JavaScript expression"
+                 "placeholder": "Your answer"
                },
                {
                  "position": "absolute",
@@ -52,6 +52,7 @@ document.body.appendChild(input);
 
 var q = {};
 function ask() {
+  input.setAttribute('placeholder', q.Q);
   var entry = el('div', {}, 
                  {
                    "fontFamily": "monospace",
