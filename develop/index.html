@@ -62,18 +62,22 @@ title: Develop
         hand.setAttribute('from', start);
         hand.setAttribute('to', start + 360);
       }
+
       function reset() {
         var h = document.getElementById('h');
         var m = document.getElementById('m');
         var s = document.getElementById('s');
-  
+
         var now = new Date();
-        set(h, now.getHours(), 12);
-        set(m, now.getMinutes(), 60);
-        set(s, now.getSeconds(), 60);
-      }
-      reset();
-    </script>
+        var hh = now.getHours();
+        var mm = now.getMinutes();
+        var ss = now.getSeconds();
+        set(h, hh + (mm / 60) + (ss / 3600), 12);
+        set(m, mm + (ss / 60), 60);
+        set(s, ss, 60);
+     }
+     reset();
+  </script>
 <quote>
 To grow and become more mature, advanced, or elaborate
 </quote>
