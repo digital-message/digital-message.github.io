@@ -40,7 +40,7 @@ document.body.appendChild(output);
 
 var input = el('input', 
                {
-                 "value": "Type some thing"
+                 "placeholder": "Type some thing"
                },
                {
                  "position": "absolute",
@@ -52,8 +52,7 @@ var input = el('input',
                });
 document.body.appendChild(input);
 
-input.onkeydown = function (e) {
-  if (e.keyCode === 13) {
+input.onchange = function (e) {
     var entry = el('div', {}, 
                  {
                    "fontSize": "18px"
@@ -61,7 +60,6 @@ input.onkeydown = function (e) {
     entry.innerHTML = this.value;
     output.appendChild(entry);
     output.scrollTop = output.scrollHeight;
-    this.setAttribute('value', '');
-  }
+    this.value = '';
 }
 </script>
