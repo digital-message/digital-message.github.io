@@ -1,0 +1,19 @@
+<style></style>
+<body>
+<img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
+<h1 id="title">Sandbox</h1>
+</body>
+<script>
+function meta(data) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in data) {
+    element.setAttribute(k, data[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+document.getElementById('title').innerHTML = eval('navigator.appVersion');
+document.title = "sandbox/plain/appVersion";
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+</script>
