@@ -45,6 +45,7 @@ var input = el('input',
                  "left": "5%",
                  "right": "5%",
                  "bottom": "10px",
+                 "fontFamily": "monospace",
                  "fontSize": "18px"
                });
 document.body.appendChild(input);
@@ -52,25 +53,27 @@ document.body.appendChild(input);
 function evaluate(s) {
     var input_entry = el('div', {}, 
                  {
-                   "fontSize": "18px",
+                   "fontFamily": "monospace",
                    "width": "50%",
                    "margin": "1rem",
-                   "marginLeft": "45%",
+                   "marginLeft": "5%",
                    "padding": "0.2em",
                    "borderRadius": "3px",
-                   "background": "#abc"
+                   "color": "#abc",
+                   "background": "#123"
                  });
     input_entry.innerHTML = 'js> ' + s;
     output.appendChild(input_entry);
 
     var output_entry = el('div', {}, 
                  {
-                   "fontSize": "18px",
+                   "fontFamily": "monospace",
                    "width": "50%",
-                   "marginLeft": "5%",
+                   "marginLeft": "45%",
                    "padding": "0.2em",
                    "borderRadius": "3px",
-                   "border": "1px solid #abc"
+                   "color": "#123",
+                   "background": "#abc"
                  });
     output_entry.innerHTML = eval(s);
     output.appendChild(output_entry);
@@ -84,4 +87,6 @@ input.onchange = function (e) {
 }
 
 evaluate('navigator.appVersion');
+evaluate('Date()');
+evaluate('1 + 2');
 </script>
