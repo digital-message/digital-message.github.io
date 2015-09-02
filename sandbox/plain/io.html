@@ -28,13 +28,8 @@ var output = el('div',
                 { 
                 }, 
                 { 
-                  "width": "90%",
-                  "padding": "0.5rem",
-                  "marginLeft": "5%",
-                  "marginTop": "5%",
                   "height": "80%",
-                  "overflow": "scroll",
-                  "border": "1px solid #CCC"
+                  "overflow": "scroll"
                 });
 document.body.appendChild(output);
 
@@ -55,7 +50,11 @@ document.body.appendChild(input);
 input.onchange = function (e) {
     var entry = el('div', {}, 
                  {
-                   "fontSize": "18px"
+                   "fontSize": "18px",
+                   "margin": "1rem",
+                   "padding": "0.1em",
+                   "borderRadius": "3px",
+                   "border": "1px solid #0E0"
                  });
     entry.innerHTML = this.value;
     output.appendChild(entry);
