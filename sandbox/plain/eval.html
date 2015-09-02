@@ -58,7 +58,7 @@ input.onchange = function (e) {
                    "borderRadius": "3px",
                    "border": "1px solid #0E0"
                  });
-    entry.innerHTML = eval(this.value);
+    entry.innerHTML = this.value + ':<br/>' + eval(this.value);
     output.appendChild(entry);
     output.scrollTop = output.scrollHeight;
     this.value = '';
