@@ -23,7 +23,7 @@ function el(tag, attr, style) {
   return element;
 }
 
-document.title = document.location.pathname;
+document.title = 'Multiplication Quiz';
 meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
 meta({"charset": "UTF-8"});
 var output = el('div',
@@ -115,9 +115,9 @@ function answer(a){
 }
 
 function randomQuestion () {
-  var x = Math.floor(Math.random() * 20);
-  var y = Math.floor(Math.random() * 20) ;
-  q = { "Q": x + ' &times; ' + y + ' = ?', "A": x * y };
+  var x = Math.floor(Math.random() * 12);
+  var y = Math.floor(Math.random() * 12) ;
+  q = { "Q": x + ' &#215; ' + y + ' = ?', "A": x * y };
 }
 
 input.onchange = function (e) {
