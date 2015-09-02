@@ -1,0 +1,126 @@
+<style> body { padding: 0; margin: 0} </style>
+<body>
+<img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
+</body>
+<script>
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+function el(tag, attr, style) {
+  var element = document.createElement(tag);
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  } 
+  for (var k in style) {
+    element.style[k] = style[k];
+  } 
+  return element;
+}
+
+document.title = document.location.pathname;
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+var output = el('div',
+                { 
+                }, 
+                { 
+                  "height": "80%",
+                  "overflow": "scroll"
+                });
+document.body.appendChild(output);
+
+var input = el('input', 
+               {
+                 "placeholder": "JavaScript expression"
+               },
+               {
+                 "position": "absolute",
+                 "width": "90%",
+                 "left": "5%",
+                 "right": "5%",
+                 "bottom": "10px",
+                 "fontFamily": "monospace",
+                 "fontSize": "18px"
+               });
+document.body.appendChild(input);
+
+var q = {};
+function ask() {
+  var entry = el('div', {}, 
+                 {
+                   "fontFamily": "monospace",
+                   "width": "80%",
+                   "margin": "1rem",
+                   "marginLeft": "5%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "color": "#abc",
+                   "background": "#123"
+                 });
+  entry.innerHTML = q.Q;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
+
+function check(a) {
+  var entry = el('div', {}, 
+                 {
+                   "fontFamily": "monospace",
+                   "width": "80%",
+                   "margin": "1rem",
+                   "marginLeft": "5%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "color": "#abc",
+                   "background": "#123"
+                 });
+  if(a == q.A) { 
+      entry.innerHTML = '&#128077;';
+      randomQuestion();
+      setTimeout(ask, 1000);
+  }
+  else { entry.innerHTML = '&#128078;';
+    setTimeout(ask, 1000);
+  }
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
+
+function answer(a){
+  var entry = el('div', {}, 
+                 {
+                   "fontFamily": "monospace",
+                   "width": "80%",
+                   "marginLeft": "15%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "color": "#123",
+                   "background": "#abc"
+                 });
+  entry.innerHTML = a;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+  check(a);
+}
+
+function randomQuestion () {
+  var x = Math.floor(Math.random() * 50);
+  var y = Math.floor(Math.random() * 50) ;
+  q = { "Q": x + ' + ' + y + ' = ?', "A": x + y };
+}
+
+input.onchange = function (e) {
+  answer(this.value);
+  this.value = '';
+}
+
+randomQuestion();
+ask();
+
+</script>
