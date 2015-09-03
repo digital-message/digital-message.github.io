@@ -123,5 +123,5 @@ input_field.onchange = function (e) {
   this.value = '';
 }
 run('print("Hello World!")');
-run('navigator\n  .geolocation\n  .getCurrentPosition(\n    function (p){\n      print(p.coords.longitude);\n      print(p.coords.latitude);\n  });');
+run('navigator\n  .geolocation\n  .getCurrentPosition(\n    function (p){\n      print(p.coords.longitude);\n      print(p.coords.latitude);\n      print(p.coords.accuracy);});');
 </script>
