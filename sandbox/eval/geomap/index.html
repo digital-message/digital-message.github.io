@@ -89,7 +89,12 @@ function print(s) {
                  "color": "#123",
                  "background": "#abc"
                });
-  entry.innerHTML = s;
+  if(typeof s === 'object') {
+    entry.innerHTML = JSON.stringify(s);
+  }
+  else {
+    entry.innerHTML = s;
+  }
   output.appendChild(entry);
   output.scrollTop = output.scrollHeight;
 }
@@ -147,7 +152,7 @@ function map(p) {
        position: latlng, 
        map: map
     });
-  }, 5000);
+  }, 3000);
 }
 
 echo(map);
