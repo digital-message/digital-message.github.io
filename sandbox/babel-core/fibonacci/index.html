@@ -2,7 +2,8 @@
 layout: babel-core
 title: fibonacci
 ---
-<div id="container" style="overflow: scroll;"></div>
+<h1>Fibonacci</h1>
+<div id="container" style="height:300px; overflow: scroll;"></div>
 <script type="text/babel">
 let fibonacci = {
   [Symbol.iterator]() {
@@ -28,10 +29,4 @@ for (var n of fibonacci) {
   container.scrollTop = container.scrollHeight;
 }
 container.appendChild(ol);
-
-window.onresize = function () {
-  container.style.height = window.innerHeight / 2;
-  container.scrollTop = container.scrollHeight;
-}
-window.onresize();
 </script>
