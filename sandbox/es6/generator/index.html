@@ -144,9 +144,15 @@ window.f = function () {
 
 var it = foo( 5 );
 
-print( it.next() );       // { value:6, done:false }
-print( it.next( 12 ) );   // { value:8, done:false }
-print( it.next( 13 ) );   // { value:42, done:true }
+// { value:6, done:false }
+print( it.next() );       
+
+// { value:8, done:false }
+print( it.next( 12 ) );   
+
+// { value:42, done:true }
+print( it.next( 13 ) );   
+
 }
 </script>
 <script>
