@@ -135,23 +135,23 @@ input_field.onchange = function (e) {
 }
 </script>
 <script id="es6" type="text/es6">
-window.f = function () {
+window.f = function (a=5,b=12,c=13) {
   function *foo(x) {
     var y = 2 * (yield (x + 1));
     var z = yield (y / 3);
     return (x + y + z);
 }
 
-var it = foo( 5 );
+var it = foo( a );
 
 // { value:6, done:false }
 print( it.next() );       
 
 // { value:8, done:false }
-print( it.next( 12 ) );   
+print( it.next( b ) );   
 
 // { value:42, done:true }
-print( it.next( 13 ) );   
+print( it.next( c ) );   
 
 }
 </script>
