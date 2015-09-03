@@ -125,22 +125,24 @@ input_field.onchange = function (e) {
 }
 
 function map(p) {
-  var latlng = new google.maps.LatLng(
-    p.coords.latitude, 
-    p.coords.longitude);
-  print(' latitude = ' +
-    p.coords.latitude);
-  print('longitude = ' + 
-    p.coords.longitude);
-  print(' accuracy = ' + 
-    p.coords.accuracy + " m");
   setTimeout(function () {
+    var latlng = new google.maps.LatLng(
+      p.coords.latitude, 
+      p.coords.longitude);
+    print(' latitude = ' +
+      p.coords.latitude);
+    print('longitude = ' + 
+      p.coords.longitude);
+    print(' accuracy = ' + 
+      p.coords.accuracy + " m");
+
     var map = new google.maps.Map(
       canvas, 
       {
         zoom: 16,
         center: latlng,
       });
+
     new google.maps.Marker({
        position: latlng, 
        map: map
