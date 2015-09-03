@@ -1,0 +1,100 @@
+<style> 
+body{padding:0;margin:0}
+#canvas{position:absolute;width:100%;height:40%;top:0;border-bottom:1px solid #CCC;}
+#output{position:absolute;width:100%;height:40%;top:40%;overflow:scroll;border-bottom:1px solid #CCC;}
+#input{position:absolute;width:100%;height:20%;bottom:0;}
+</style>
+<body>
+<div id="canvas">
+<center>
+<img src="../logo.png" style="height:100%;"/>
+</center>
+</div>
+<div id="output"></div>
+<div id="input"></div>
+</body>
+<script>
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+function el(tag, attr, style) {
+  var element = document.createElement(tag);
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  } 
+  for (var k in style) {
+    element.style[k] = style[k];
+  } 
+  return element;
+}
+
+document.title = document.location.pathname;
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+var canvas = document.getElementById('canvas');
+var output = document.getElementById('output');
+var input = document.getElementById('input');
+var input_field = el('textarea', 
+               {
+                 "placeholder": "JavaScript expression"
+               },
+               {
+                 "position": "absolute",
+                 "width": "90%",
+                 "height": "90%",
+                 "left": "5%",
+                 "right": "5%",
+                 "top": "5%",
+                 "fontFamily": "monospace",
+                 "fontSize": "18px"
+               });
+input.appendChild(input_field);
+
+function evaluate(s) {
+    console.log(s);
+    var input_entry = el('div', {}, 
+                 {
+                   "fontFamily": "monospace",
+                   "width": "80%",
+                   "margin": "1rem",
+                   "marginLeft": "5%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "color": "#abc",
+                   "background": "#123"
+                 });
+    input_entry.innerHTML = 'js> ' + s;
+    output.appendChild(input_entry);
+
+    var output_entry = el('pre', {}, 
+                 {
+                   "fontFamily": "monospace",
+                   "width": "80%",
+                   "marginLeft": "15%",
+                   "padding": "0.2em",
+                   "borderRadius": "3px",
+                   "color": "#123",
+                   "background": "#abc"
+                 });
+    output_entry.innerHTML = eval(s);
+    output.appendChild(output_entry);
+
+    output.scrollTop = output.scrollHeight;
+}
+
+input_field.onchange = function (e) {
+    console.log(this.value);
+    evaluate(this.value);
+    this.value = '';
+}
+
+evaluate('navigator.appVersion');
+evaluate('Date()');
+evaluate('1 + 2');
+</script>
