@@ -94,7 +94,7 @@ function print(s) {
 }
 
 function echo(s) {
-  var entry = el('div', {}, 
+  var entry = el('pre', {}, 
                {
                  "fontFamily": "monospace",
                  "width": "80%",
@@ -123,5 +123,5 @@ input_field.onchange = function (e) {
   this.value = '';
 }
 run('print("Hello World!")');
-run('navigator.geolocation.getCurrentPosition(function (position) {print(position.coords.longitude); print(position.coords.latitude); })');
+run('navigator\n  .geolocation\n  .getCurrentPosition(function (position){\n    print(position.coords.longitude);\n    print(position.coords.latitude);\n  });');
 </script>
