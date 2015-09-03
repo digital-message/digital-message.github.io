@@ -2,7 +2,7 @@
 layout: babel-core
 title: fibonacci
 ---
-<div id="container"></div>
+<div id="container" style="overflow: scroll;"></div>
 <script type="text/babel">
 let fibonacci = {
   [Symbol.iterator]() {
@@ -17,6 +17,7 @@ let fibonacci = {
 }
 
 let ol = document.createElement('ol');
+let container = document.getElementById('container');
 for (var n of fibonacci) {
   // truncate the sequence at 100000
   if (n > 100000)
@@ -24,6 +25,13 @@ for (var n of fibonacci) {
   let li = document.createElement('li');
   li.innerHTML = n;
   ol.appendChild(li);
+  container.scrollTop = container.scrollHeight;
 }
-document.getElementById('container').appendChild(ol);
+container.appendChild(ol);
+
+window.onresize = function () {
+  container.style.height = window.innerHeight / 2;
+  container.scrollTop = container.scrollHeight;
+}
+window.onresize();
 </script>
