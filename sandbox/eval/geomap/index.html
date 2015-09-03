@@ -126,19 +126,16 @@ input_field.onchange = function (e) {
 
 function map(p) {
   var latlng = new google.maps.LatLng(
-    p.coords.latitude, p.coords.longitude);
+    p.coords.latitude, 
+    p.coords.longitude);
   print(p.coords.latitude);
   print(p.coords.longitude);
-  var myOptions = {
-    zoom: 15,
-    center: latlng,
-    mapTypeControl: false,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(
-    document.getElementById("canvas"), 
-    myOptions);
+  new google.maps.Map(canvas, {
+      zoom: 16,
+      center: latlng
+    });
 }
+
 echo(map);
-run('navigator.geolocation.getCurrentPosition(map)');
+run('navigator.\n  geolocation.\n  getCurrentPosition(map)');
 </script>
