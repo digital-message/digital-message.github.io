@@ -2,14 +2,26 @@
 layout: babel-core
 title: babel-core
 ---
-<div id="test"><div>
+<h1 id="name"></h1>
+<h2 id="version"></h2>
 <script type="text/babel">
 class Test {
   test() {
     return "test";
   }
+  name() {
+    return "babel-core";
+  }
+  version() {
+    return babel.version;
+  }
+  title() {
+    return this.name() + '-' + this.version();
+  }
 }
 
 var test = new Test;
-document.getElementById('test').innerHTML=test.test(); // "test"
+document.getElementById('name').innerHTML=test.name();
+document.getElementById('version').innerHTML=test.version();
+document.title = test.title();
 </script>
