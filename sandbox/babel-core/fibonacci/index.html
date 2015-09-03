@@ -21,7 +21,7 @@ let container = document.getElementById('container');
 let ol = document.createElement('ol');
 container.appendChild(ol);
 for (var n of fibonacci) {
-  if (n > 1e9)
+  if (n > 1e12)
     break;
   let li = document.createElement('li');
   li.innerHTML = n;
