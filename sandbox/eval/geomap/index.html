@@ -9,81 +9,27 @@ body{padding:0;margin:0}
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
 <div id="canvas">
 <center>
-  <svg width="100%" height="100%" viewbox="0 0 300 300">
-    <g transform="translate(150, 150)">
-      <ellipse cx="0" cy="0" rx="120" ry="120" fill="white" stroke="brown" />
-        <line x1="0" y1="0" x2="40" y2="0" stroke="green" stroke-width="6">
-          <animateTransform id="h" attributeName="transform" type="rotate" from="-90" to="270" dur="43200" begin="0" repeatCount="indefinite">
-        </line>
-        <line x1="0" y1="0" x2="60" y2="0" stroke="blue" stroke-width="4">
-          <animateTransform  id="m" attributeName="transform" type="rotate" from="-90" to="270" dur="3600s" begin="0" repeatCount="indefinite">
-        </line>
-        <line x1="0" y1="0" x2="90" y2="0" stroke="red" stroke-width="2">
-          <animateTransform  id="s" attributeName="transform" type="rotate" from="-90" to="270" dur="60s" begin="0" repeatCount="indefinite">
-        </line>
-        <g transform="rotate(30)">
-          <text x="-0.5em" y="-100">I</text>
-        </g>
-        <g transform="rotate(60)">
-          <text x="-0.5em" y="-100">II</text>
-        </g>
-        <g transform="rotate(90)">
-          <text x="-0.5em" y="-100">III</text>
-        </g>
-        <g transform="rotate(120)">
-          <text x="-0.5em" y="-100">IIII</text>
-        </g>
-        <g transform="rotate(150)">
-          <text x="-0.5em" y="-100">V</text>
-        </g>
-        <g transform="rotate(180)">
-          <text x="-0.5em" y="-100">VI</text>
-        </g>
-        <g transform="rotate(210)">
-          <text x="-0.5em" y="-100">VII</text>
-        </g>
-        <g transform="rotate(240)">
-          <text x="-0.5em" y="-100">VIII</text>
-        </g>
-        <g transform="rotate(270)">
-          <text x="-0.5em" y="-100">IX</text>
-        </g>
-        <g transform="rotate(300)">
-          <text x="-0.5em" y="-100">X</text>
-        </g>
-        <g transform="rotate(330)">
-          <text x="-0.5em" y="-100">XI</text>
-        </g>
-        <g transform="rotate(360)">
-          <text x="-0.5em" y="-100">XII</text>
-        </g>
-      </g>
-    </svg>
-  </center>
-  <script>
-    (function () {
-      function set(hand, value, range) {
-        var start = 360 * value / range - 90;
-        hand.setAttribute('from', start);
-        hand.setAttribute('to', start + 360);
-      }
-
-      function reset() {
-        var h = document.getElementById('h');
-        var m = document.getElementById('m');
-        var s = document.getElementById('s');
-
-        var now = new Date();
-        var hh = now.getHours();
-        var mm = now.getMinutes();
-        var ss = now.getSeconds();
-        set(h, hh + (mm / 60) + (ss / 3600), 12);
-        set(m, mm + (ss / 60), 60);
-        set(s, ss, 60);
-      }
-      reset();
-    })();
-  </script>
+<svg width="100%" height="100%" viewbox="0 0 64 64">
+<g transform="translate(2,2)">
+<rect x="0" y="0" width="60" height="60" fill="none" stroke="black" stroke-width="2"/>
+<rect x="4" y="12" width="24" height="12" fill="black" stroke="none"/>
+<rect x="4" y="36" width="24" height="12" fill="black" stroke="none"/>
+<rect x="32" y="36" width="24" height="12" fill="black" stroke="none"/>
+<circle cx="38" cy="18" r="5.4" fill="red" stroke="none" opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="1" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="1.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="fill" from="red" to="black" dur="0.1s" begin="2.5" repeatCount="1" fill="freeze"/>
+</circle>
+<circle cx="50" cy="18" r="5.4" fill="red" stroke="none" opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="1" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="1.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="2" repeatCount="1" fill="freeze"/>
+<animate attributeName="fill" from="red" to="black" dur="0.1s" begin="2" repeatCount="1" fill="freeze"/>
+</circle>
+</g>
+</svg>
+</center>
 </div>
 <div id="output"></div>
 <div id="input"></div>
