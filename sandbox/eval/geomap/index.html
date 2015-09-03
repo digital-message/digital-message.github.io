@@ -1,0 +1,144 @@
+<style> 
+body{padding:0;margin:0}
+#canvas{position:absolute;width:100%;height:40%;top:0;border-bottom:1px solid #CCC;}
+#output{position:absolute;width:100%;height:40%;top:40%;overflow:scroll;border-bottom:1px solid #CCC;}
+#input{position:absolute;width:100%;height:20%;bottom:0;}
+</style>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<body>
+<img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
+<div id="canvas">
+<center>
+<svg width="100%" height="100%" viewbox="0 0 64 64">
+<g transform="translate(2,2)">
+<rect x="0" y="0" width="60" height="60" fill="none" stroke="black" stroke-width="2"/>
+<rect x="4" y="12" width="24" height="12" fill="black" stroke="none"/>
+<rect x="4" y="36" width="24" height="12" fill="black" stroke="none"/>
+<rect x="32" y="36" width="24" height="12" fill="black" stroke="none"/>
+<circle cx="38" cy="18" r="5.4" fill="red" stroke="none" opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="1" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="1.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="fill" from="red" to="black" dur="0.1s" begin="2.5" repeatCount="1" fill="freeze"/>
+</circle>
+<circle cx="50" cy="18" r="5.4" fill="red" stroke="none" opacity="0">
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="1" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="1.5" repeatCount="1" fill="freeze"/>
+<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="2" repeatCount="1" fill="freeze"/>
+<animate attributeName="fill" from="red" to="black" dur="0.1s" begin="2" repeatCount="1" fill="freeze"/>
+</circle>
+</g>
+</svg>
+</center>
+</div>
+<div id="output"></div>
+<div id="input"></div>
+</body>
+<script>
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
+function el(tag, attr, style) {
+  var element = document.createElement(tag);
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  } 
+  for (var k in style) {
+    element.style[k] = style[k];
+  } 
+  return element;
+}
+
+document.title = document.location.pathname;
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
+var canvas = document.getElementById('canvas');
+var output = document.getElementById('output');
+var input = document.getElementById('input');
+var input_field = el('textarea', 
+               {
+                 "placeholder": "JavaScript expression"
+               },
+               {
+                 "position": "absolute",
+                 "width": "90%",
+                 "height": "90%",
+                 "left": "5%",
+                 "right": "5%",
+                 "top": "5%",
+                 "fontFamily": "monospace",
+                 "color": "#abc",
+                 "background": "#123"
+               });
+input.appendChild(input_field);
+
+function print(s) {
+  var entry = el('pre', {}, 
+               {
+                 "fontFamily": "monospace",
+                 "width": "80%",
+                 "marginLeft": "15%",
+                 "padding": "0.2em",
+                 "borderRadius": "3px",
+                 "color": "#123",
+                 "background": "#abc"
+               });
+  entry.innerHTML = s;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
+
+function echo(s) {
+  var entry = el('pre', {}, 
+               {
+                 "fontFamily": "monospace",
+                 "width": "80%",
+                 "margin": "1rem",
+                 "marginLeft": "5%",
+                 "padding": "0.2em",
+                 "borderRadius": "3px",
+                 "color": "#abc",
+                 "background": "#123"
+               });
+  entry.innerHTML = s;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
+
+function run(s) {
+  echo(s);
+  var return_value = eval(s);
+  if (return_value !== undefined) {
+    print(return_value);
+  }
+}
+
+input_field.onchange = function (e) {
+  run(this.value);
+  this.value = '';
+}
+
+function map(p) {
+  var latlng = new google.maps.LatLng(
+    p.coords.latitude, p.coords.longitude);
+  print(p.coords.latitude);
+  print(p.coords.longitude);
+  var myOptions = {
+    zoom: 15,
+    center: latlng,
+    mapTypeControl: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(
+    document.getElementById("canvas"), 
+    myOptions);
+}
+echo(map);
+run('navigator.geolocation.getCurrentPosition(map)');
+</script>
