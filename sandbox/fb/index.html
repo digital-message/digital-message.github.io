@@ -1,19 +1,6 @@
 <html>
   <head>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-    <script>
-var ref = new Firebase("https://digital-message.firebaseio.com");
-ref.authWithOAuthPopup("github", function(error, authData) {
-  if (error) {
-    console.log("Login Failed!", error);
-  } else {
-    console.log("Authenticated successfully with payload:", authData);
-  }
-});
-    </script>
-  </head>
   <body>
    <h1>It works!</h1>
   </body>
-
 </html>
