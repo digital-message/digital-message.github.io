@@ -1,3 +1,7 @@
+---
+layout: plain
+title: Geomap
+---
 <style> 
 body{padding:0;margin:0}
 #canvas{position:absolute;width:100%;height:35%;top:0;border-bottom:1px solid #CCC;}
@@ -55,9 +59,6 @@ function el(tag, attr, style) {
   return element;
 }
 
-document.title = document.location.pathname;
-meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
-meta({"charset": "UTF-8"});
 var canvas = document.getElementById('canvas');
 var output = document.getElementById('output');
 var input = document.getElementById('input');
