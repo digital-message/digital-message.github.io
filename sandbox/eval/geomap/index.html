@@ -1,7 +1,9 @@
----
-layout: plain
-title: Geomap
----
+<style> 
+body{padding:0;margin:0}
+#canvas{position:absolute;width:100%;height:35%;top:0;border-bottom:1px solid #CCC;}
+#output{position:absolute;width:100%;height:40%;top:40%;overflow:scroll;border-bottom:1px solid #CCC;}
+#input{position:absolute;width:100%;height:20%;bottom:0;}
+</style>
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 <body>
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
@@ -53,6 +55,9 @@ function el(tag, attr, style) {
   return element;
 }
 
+document.title = document.location.pathname;
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
 var canvas = document.getElementById('canvas');
 var output = document.getElementById('output');
 var input = document.getElementById('input');
