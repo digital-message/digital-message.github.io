@@ -125,9 +125,8 @@ function run(s) {
 }
 
 input_field.onchange = function (e) {
-  var v = this.value
+  run(this.value);
   this.value = '';
-  run(this.v);
 }
 run('`Hello World\n${Date()}`');
 run('Array(10)\n  .fill(0)\n  .map((v,i) => i)\n  .map(x => x * 2)\n  .map(x => x + 1)');
