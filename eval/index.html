@@ -52,49 +52,57 @@ var input_field = el('textarea',
                  "right": "5%",
                  "top": "5%",
                  "fontFamily": "monospace",
-                 "fontSize": "18px"
+                 "color": "#abc",
+                 "background": "#123"
                });
 input.appendChild(input_field);
 
-function evaluate(s) {
-    console.log(s);
-    var input_entry = el('div', {}, 
-                 {
-                   "fontFamily": "monospace",
-                   "width": "80%",
-                   "margin": "1rem",
-                   "marginLeft": "5%",
-                   "padding": "0.2em",
-                   "borderRadius": "3px",
-                   "color": "#abc",
-                   "background": "#123"
-                 });
-    input_entry.innerHTML = 'js> ' + s;
-    output.appendChild(input_entry);
+function print(s) {
+  var entry = el('pre', {}, 
+               {
+                 "fontFamily": "monospace",
+                 "width": "80%",
+                 "marginLeft": "15%",
+                 "padding": "0.2em",
+                 "borderRadius": "3px",
+                 "color": "#123",
+                 "background": "#abc"
+               });
+  entry.innerHTML = s;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
 
-    var output_entry = el('pre', {}, 
-                 {
-                   "fontFamily": "monospace",
-                   "width": "80%",
-                   "marginLeft": "15%",
-                   "padding": "0.2em",
-                   "borderRadius": "3px",
-                   "color": "#123",
-                   "background": "#abc"
-                 });
-    output_entry.innerHTML = eval(s);
-    output.appendChild(output_entry);
+function echo(s) {
+  var entry = el('div', {}, 
+               {
+                 "fontFamily": "monospace",
+                 "width": "80%",
+                 "margin": "1rem",
+                 "marginLeft": "5%",
+                 "padding": "0.2em",
+                 "borderRadius": "3px",
+                 "color": "#abc",
+                 "background": "#123"
+               });
+  entry.innerHTML = s;
+  output.appendChild(entry);
+  output.scrollTop = output.scrollHeight;
+}
 
-    output.scrollTop = output.scrollHeight;
+function run(s) {
+  echo(s);
+  var return_value = eval(s);
+  if (return_value !== undefined) {
+    print(return_value);
+  }
 }
 
 input_field.onchange = function (e) {
-    console.log(this.value);
-    evaluate(this.value);
-    this.value = '';
+  run(this.value);
+  this.value = '';
 }
 
-evaluate('navigator.appVersion');
-evaluate('Date()');
-evaluate('1 + 2');
+run('Date()');
+run('1 + 2');
 </script>
