@@ -17,8 +17,9 @@ let fibonacci = {
   }
 }
 
-let ol = document.createElement('ol');
 let container = document.getElementById('container');
+let ol = document.createElement('ol');
+container.appendChild(ol);
 for (var n of fibonacci) {
   // truncate the sequence at 100000
   if (n > 100000)
@@ -26,7 +27,6 @@ for (var n of fibonacci) {
   let li = document.createElement('li');
   li.innerHTML = n;
   ol.appendChild(li);
+  container.scrollTop = container.scrollHeight;
 }
-container.appendChild(ol);
-container.scrollTop = container.scrollHeight;
 </script>
