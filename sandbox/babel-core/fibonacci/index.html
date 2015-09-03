@@ -2,6 +2,7 @@
 layout: babel-core
 title: fibonacci
 ---
+<div id="container"></div>
 <script type="text/babel">
 let fibonacci = {
   [Symbol.iterator]() {
@@ -17,12 +18,12 @@ let fibonacci = {
 
 let ol = document.createElement('ol');
 for (var n of fibonacci) {
-  // truncate the sequence at 10000
-  if (n > 10000)
+  // truncate the sequence at 100000
+  if (n > 100000)
     break;
   let li = document.createElement('li');
   li.innerHTML = n;
   ol.appendChild(li);
 }
-document.body.appendChild(ol);
+document.getElementById('container').appendChild(ol);
 </script>
