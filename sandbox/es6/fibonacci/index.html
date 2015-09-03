@@ -4,8 +4,8 @@ body{padding:0;margin:0}
 #output{position:absolute;width:100%;height:40%;top:40%;overflow:scroll;border-bottom:1px solid #CCC;}
 #input{position:absolute;width:100%;height:20%;bottom:0;}
 </style>
-<script src="browser-polyfill.js"></script>
-<script src="browser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser-polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
 <body>
 <img src="/logo.png" width="0" height="0" style="position: absolute; opacity: 0;" />
 <div id="canvas">
@@ -128,5 +128,32 @@ input_field.onchange = function (e) {
   run(this.value);
   this.value = '';
 }
-run('`Now: ${Date()}`');
+</script>
+<script id="es6" type="text/es6">
+window.f = function (limit=10) {
+  let fibonacci = {
+    [Symbol.iterator]() {
+      let pre = 0, cur = 1;
+      return {
+        next() {
+          [pre, cur] = [cur, pre + cur];
+          return { done: false, value: cur }
+        }
+      }
+    }
+  }
+
+  let count = 0;
+  for (var n of fibonacci) {
+    count++;
+    if (count > limit)
+      break;
+    print(`f(${count}) = ${n}`)
+  }
+}
+</script>
+<script>
+var src =document.getElementById('es6').innerText;
+run(src)
+run('f()')
 </script>
