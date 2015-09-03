@@ -17,8 +17,8 @@ let fibonacci = {
 
 let ol = document.createElement('ol');
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
-  if (n > 1000)
+  // truncate the sequence at 10000
+  if (n > 10000)
     break;
   let li = document.createElement('li');
   li.innerHTML = n;
