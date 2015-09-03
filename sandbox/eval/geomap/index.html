@@ -128,9 +128,12 @@ function map(p) {
   var latlng = new google.maps.LatLng(
     p.coords.latitude, 
     p.coords.longitude);
-  print(' latitude = ' + p.coords.latitude);
-  print('longitude = ' + p.coords.longitude);
-  print(' accuracy = ' + p.coords.accuracy + "meters");
+  print(' latitude = ' +
+    p.coords.latitude);
+  print('longitude = ' + 
+    p.coords.longitude);
+  print(' accuracy = ' + 
+    p.coords.accuracy + " m");
   var map = new google.maps.Map(
     canvas, 
     {
