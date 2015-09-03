@@ -21,8 +21,8 @@ let container = document.getElementById('container');
 let ol = document.createElement('ol');
 container.appendChild(ol);
 for (var n of fibonacci) {
-  // truncate the sequence at 1000000
-  if (n > 1000000)
+  // truncate the sequence at 10000000
+  if (n > 10000000)
     break;
   let li = document.createElement('li');
   li.innerHTML = n;
