@@ -1,0 +1,3 @@
+[submodule "Computer-Modern"]
+	path = Computer-Modern
+	url = git@github.com:ontouchstart/Computer-Modern.git
