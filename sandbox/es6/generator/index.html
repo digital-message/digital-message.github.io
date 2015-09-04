@@ -1,6 +1,18 @@
 ---
-layout: io
+layout: plain
 ---
+<style>
+body{padding:0;margin:0}
+#canvas{position:absolute;width:100%;height:20%;top:0;padding:10px;border-bottom:1px solid #CCC;}
+#output{position:absolute;width:100%;height:55%;top:25%;overflow:scroll;border-bottom:1px solid #CCC;}
+#input{position:absolute;width:100%;height:20%;bottom:0;}
+</style>
+<div id="canvas">
+{% include logo.svg %}
+</div>
+<div id="output"></div>
+<div id="input"></div>
+</body>
 <script src="../browser-polyfill.js"></script>
 <script src="../browser.js"></script>
 <script>
