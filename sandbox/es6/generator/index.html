@@ -16,16 +16,29 @@ body{padding:0;margin:0}
 <script src="../browser-polyfill.js"></script>
 <script src="../browser.js"></script>
 <script>
+function meta(attr) {
+  var element = document.createElement('meta');
+  var head = document.head;
+  for (var k in attr) {
+    element.setAttribute(k, attr[k]);
+  }
+  head.insertBefore( element, head.firstChild );
+}
+
 function el(tag, attr, style) {
   var element = document.createElement(tag);
   for (var k in attr) {
     element.setAttribute(k, attr[k]);
-  } 
+  }
   for (var k in style) {
     element.style[k] = style[k];
-  } 
+  }
   return element;
 }
+
+document.title = document.location.pathname;
+meta({"name":"viewport","content":"width=device-width,initial-scale=1,user-scalable=no"});
+meta({"charset": "UTF-8"});
 
 document.title = document.location.pathname;
 
