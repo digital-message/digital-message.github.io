@@ -78,7 +78,7 @@ A practical approach to build a Lego robotic based **learning environment** is t
 
 ## Teachers as supervisors and project managers of the learning environment
 
-With this metaphor, we can borrow modern agile project management concepts, tools and best practice in education. In the context of Lego Mindstorms education, it is about time and resource management, help student identify problems and solutions as a team. In such a dynamic collaborative learning environment, effective social communication becomes the key. 
+With this metaphor, we can borrow modern agile project management concepts, tools and best practice and apply them to education. In the context of hands-on Lego Mindstorms education, it is about time and resource management and helping student identify problems, build prototypes and find solutions as a team. In such a dynamic collaborative learning environment, effective communication of ideas becomes the key. 
 
 ## Inspiration
 
@@ -93,3 +93,5 @@ With this metaphor, we can borrow modern agile project management concepts, tool
 > We are now seeing the start of a dynamic medium. To a large extent, people today are using this medium merely to emulate and extend static representations from the era of paper, and to further constrain the ways in which the human body can interact with external representations of thought.
 
 > But the dynamic medium offers the opportunity to deliberately invent a humane and empowering form of knowledge work. We can design dynamic representations which draw on the entire range of human capabilities — all senses, all forms of movement, all forms of understanding — instead of straining a few and atrophying the rest.
+
+We believe Lego Mindstorms can provide an opportunity to study how students develop milti-dimensional skills in the context presented in Bret Victor's talk.
