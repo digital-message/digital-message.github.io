@@ -78,7 +78,7 @@ A practical approach to build a Lego robotic based **learning environment** is t
 
 ## Teachers as supervisors and project managers of the learning environment
 
-With this metaphor, we can borrow modern project management concepts, tools and best practice in education. In the context of Lego Mindstorms education, it is about time and resource management, help student identify problems and solutions as a team.
+With this metaphor, we can borrow modern agile project management concepts, tools and best practice in education. In the context of Lego Mindstorms education, it is about time and resource management, help student identify problems and solutions as a team. In such a dynamic collaborative learning environment, effective social communication becomes the key. 
 
 ## Inspiration
 
