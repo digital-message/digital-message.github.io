@@ -103,6 +103,6 @@ With this metaphor, we can borrow modern agile project management concepts, tool
 
 > But the dynamic medium offers the opportunity to deliberately invent a humane and empowering form of knowledge work. We can design dynamic representations which draw on the entire range of human capabilities — all senses, all forms of movement, all forms of understanding — instead of straining a few and atrophying the rest.
 
-We believe Lego Mindstorms can provide a low-cost opportunity to study how students develop these modes of understanding in the context presented in Bret Victor's talk. By emphasizing hands-on manipulation of Lego parts and objects as well as abstract programming the behavior of the robot, we might find a way to free students from the "inhumane and wasteful cage" that limits their modes of understanding.
+We believe Lego Mindstorms can provide a low-cost opportunity to study how students develop these modes of understanding in the context presented in Bret Victor's talk. By emphasizing hands-on manipulation of Lego parts and objects as well as abstract programming the behavior of the robot, we might be able to find a way to free students from the "inhumane and wasteful cage" that limits their modes of understanding.
 
 This is the core idea of this project.
