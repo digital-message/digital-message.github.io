@@ -80,7 +80,16 @@ A practical approach to build a Lego robotic based **learning environment** is t
 
 With this metaphor, we can borrow modern agile project management concepts, tools and best practice and apply them to education. In the context of hands-on Lego Mindstorms education, it is about time and resource management and helping student identify problems, build prototypes and find solutions as a team. In such a dynamic collaborative learning environment, effective communication of ideas becomes the key. 
 
-## Inspiration
+## Modes of understanding
+
+- Visual
+- Aural
+- Tactile
+- Kinesthetic
+- Spatial
+- Enactive
+- Iconic
+- Symbolic
 
 [The Humane Representation of Thought](https://vimeo.com/115154289) by [Bret Victor](http://worrydream.com/)
 
@@ -95,6 +104,4 @@ With this metaphor, we can borrow modern agile project management concepts, tool
 > But the dynamic medium offers the opportunity to deliberately invent a humane and empowering form of knowledge work. We can design dynamic representations which draw on the entire range of human capabilities — all senses, all forms of movement, all forms of understanding — instead of straining a few and atrophying the rest.
 
 We believe Lego Mindstorms can provide a low-cost opportunity to study how students develop milti-dimensional skills in the context presented in Bret Victor's talk. By emphasizing hands-on manipulation of Lego parts and object as well as abstract programming the behavior of the robot, it frees students from the "inhumane and wasteful cage" that limits their modes of understanding.
-
-
 
