@@ -27,7 +27,7 @@ M是数学。 也就是抽象思维和逻辑。 这是所有工程技术科学�
 
 一位著名的学者（Alan Kay) 有一句名言：好的视角可以增加80个IQ。
 
-- Alan Kay的远见[A personal Computer for Children of All Ages](Kay72a.pdf) (PDF)
+- Alan Kay的远见 [A personal Computer for Children of All Ages](Kay72a.pdf) (PDF)
 
 - 41年以后的现实 [Afterword: What is a Dynabook?](hc_what_Is_a_dynabook.pdf) (PDF) 
 
