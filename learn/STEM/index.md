@@ -27,6 +27,8 @@ M是数学。 也就是抽象思维和逻辑。 这是所有工程技术科学�
 
 一位著名的学者（Alan Kay) 有一句名言：好的视角可以增加80个IQ。
 
+[Alan Kay: A personal Computer for Children of All Ages](Kay72a.pdf) (PDF)
+
 # STEM
 
 所以STEM教育的核心不是知识积累，而是思维方式和工作方式的训练。
