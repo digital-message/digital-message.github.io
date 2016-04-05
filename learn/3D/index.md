@@ -21,12 +21,12 @@ title: 从印刷术到3D打印
 
 ### 3D打印
 
-大家看看谁能打开[这个文件](https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl)?
+大家看看谁能用**现代桌面浏览器**打开[这个文件](https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl)?
 还有[这个](https://github.com/canadaduane/house/blob/master/kitchen/faucet/faucet_fix2.stl), 谁的3D打印机可以打出来？
 
 3D打印的核心不在于硬件，而是[文件](https://help.github.com/articles/3d-file-viewer/)。还有更重要的，文件背后的设计思想。
 
-其实大家可以在现代桌面浏览器打开这个[文件](https://github.com/gklyne/things/blob/master/ServoBox/Servobox.stl)[源代码](https://raw.githubusercontent.com/gklyne/things/master/ServoBox/Servobox.stl)见看看里面的片段，
+其实大家可以这个[文件](https://github.com/gklyne/things/blob/master/ServoBox/Servobox.stl)的[源代码](https://raw.githubusercontent.com/gklyne/things/master/ServoBox/Servobox.stl)见看看里面的片段，
 
 ```stl
 solid OpenSCAD_Model
