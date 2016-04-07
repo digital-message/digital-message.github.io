@@ -7,8 +7,7 @@ title: 以GitHub为代表的开放式创新实践共享平台
 
 [GitHub](https://github.com)是一个建立在[git](https://git-scm.com/book/zh/v2)分布式版本控制系统基础之上的一个开放式创新实践共享平台。 
 
-Git是由Linux的缔造者Linus Torvalds为了Linux内核开源社区合作开发而设计开发出来
-的一个开源分布式版本控制系统。第一次[代码提交(commit)](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290)于Apr 7, 2005, 
+Git([维基百科PDF](git.pdf))是由Linux的缔造者Linus Torvalds为了Linux内核开源社区合作开发而在相当短的时期内设计开发出来的一个开源分布式版本控制系统。第一次[代码提交(commit)](https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290)于Apr 7, 2005, 
 距今整整十一年。
 
 GitHub([维基百科PDF](GitHub.pdf))是一个建立在Git的思想, 概念和技术基础上的开放式共享平台。
