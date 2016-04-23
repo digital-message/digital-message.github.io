@@ -42,5 +42,6 @@ STEM + A = [STEAM](../STEAM)
 
 # 隨筆
 
-- [As We May Think (如我們所思)](../as_we_may_think/)
+- [As We May Think (如我們所思)](../as_we_may_think)
 - [從印刷術到3D打印](../3D)
+- [Git和開放式創新實踐共享](../git)
