@@ -5,7 +5,7 @@ title: STEM + A = STEAM
 
 ## {{ page.title }}
 
-[STEM](../STEM)和Art结合后的新标语就成了**STEAM**。
+[STEM](../STEM) 和Art结合后的新标语就成了**STEAM**。
 
 # Art
 
