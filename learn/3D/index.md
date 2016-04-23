@@ -1,32 +1,32 @@
 ---
 layout: default
-title: 从印刷术到3D打印
+title: 從印刷術到3D打印
 ---
 
 ## {{ page.title }}
 
-### 印刷术
+### 印刷術
 
 - [Wikipedia](printing_en.pdf) (PDF)
-- [维基百科](printing_cn.pdf) (PDF)
+- [維基百科](printing_cn.pdf) (PDF)
 
-印刷术的核心不是纸墨，而是复制。我们的祖先发明了活字印刷。但是印刷术的核心：分享，却是让西方人掌握了。
+印刷術的核心不是紙墨，而是複製。我們的祖先發明了活字印刷。但是印刷術的核心：分享，卻是讓西方人掌握了。
 
-可以说连[古滕堡](Gutenberg_cn.pdf) ([Gutenberg](Gutenberg_en.pdf))也没有看到印刷术的核心，一百五十年后欧洲才发现其中的“分享”的精髓。 
+但是實際上可以說連[古滕堡](Gutenberg_cn.pdf) ([Gutenberg](Gutenberg_en.pdf))也沒有看到印刷術的核心，一百五十年後歐洲才發現印刷術的顛覆傳統的真實力量在於一個很簡單的思想和概念：「分享」。 
 
-大众文化，媒体传播，地球村，[这些思想](Gutenberg_Galaxy.pdf)六十年代西方就有了。
-六十年代后的计算机革命，七十年代的图形界面，八十年代的个人电脑，九十年代的互联网，二十一世纪的移动互联网，都是一脉相传的。
-3D打印，VR，AR， AI都是今后五十年的科技进步的延续。 共享，山寨，创客，黑客，极客都是表面现象。 
-核心是在新技术环境下新的社会生活和工作方式，其中“社会性”尤其重要。
+大眾文化，媒體傳播，地球村，[這些思想](Gutenberg_Galaxy.pdf)六十年代西方就有了。
+六十年代後的計算機革命，七十年代的圖形界面，八十年代的個人電腦，九十年代的互聯網，二十一世紀的移動互聯網，都是一脈相傳的。
+3D打印，VR，AR，AI都是今後五十年的科技進步的延續。 共享，山寨，創客，黑客，極客都是表面現象。 
+核心是在新技術環境下新的社會生活和工作方式，其中分享文化和社會化分工合作尤其重要。
 
 ### 3D打印
 
-大家看看谁能用**现代桌面浏览器**打开[这个文件](https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl)?
-还有[这个](https://github.com/canadaduane/house/blob/master/kitchen/faucet/faucet_fix2.stl), 谁的3D打印机可以打出来？
+大家看看誰能用**現代桌面瀏覽器**打開[這個文件](https://github.com/skalnik/secret-bear-clip/blob/master/stl/clip.stl)?
+還有[這個](https://github.com/canadaduane/house/blob/master/kitchen/faucet/faucet_fix2.stl), 誰的3D打印機可以打出來？
 
-3D打印的核心不在于硬件，而是[文件](https://help.github.com/articles/3d-file-viewer/)。还有更重要的，文件背后的设计思想。
+3D打印的核心不在於硬件，而是[文件](https://help.github.com/articles/3d-file-viewer/)。還有更重要的，文件背後的設計思想。
 
-其实大家可以这个[文件](https://github.com/gklyne/things/blob/master/ServoBox/Servobox.stl)的[源代码](https://raw.githubusercontent.com/gklyne/things/master/ServoBox/Servobox.stl)见看看里面的片段，
+其實大家可以這個[文件](https://github.com/gklyne/things/blob/master/ServoBox/Servobox.stl)的[源代碼](https://raw.githubusercontent.com/gklyne/things/master/ServoBox/Servobox.stl)見看看裡面的片段，
 
 ```stl
 solid OpenSCAD_Model
@@ -41,11 +41,8 @@ solid OpenSCAD_Model
 endsolid OpenSCAD_Model
 ```
 
-这样的文件是学习几何的最好工具。[vertex](vertex.pdf)和[facet](facet.pdf)都是立体几何的核心概念。
-只有几何才能保证三十年后还不会过时。
+這樣的文件是學習幾何的最好工具。[vertex](vertex.pdf)和[facet](facet.pdf)都是立體幾何的核心概念。
+只有幾何才能保證三十年後還不會過時。
 
-### 讨论
-
-[有关3D打印技术和教育的讨论](https://github.com/digital-message/digital-message.github.io/issues/1)
 
 
