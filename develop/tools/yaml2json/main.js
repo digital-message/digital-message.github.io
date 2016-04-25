@@ -1,4 +1,56 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+d3 = require('d3');
+js_yaml = require('js-yaml');
+
+window.onload = function () {
+  content = d3.select('#content').style({"margin":"1em","padding":"1em"});
+
+  yaml_div = content.append('div');
+  yaml_code = yaml_div.append('textarea').attr({"rows":20}).style({"width":"100%"}).node();
+
+  json_button = content.append('button').html('yaml to json').style({margin: '1em'});
+  yaml_button = content.append('button').html('json to yaml').style({margin: '1em'});
+
+  json_div = content.append('div');
+  json_code = json_div.append('textarea').attr({"rows":20}).style({"width":"100%"}).node();
+
+  yaml_button.on('click', function (e) {
+    try { 
+      data = JSON.parse(json_code.value);
+      var output = js_yaml.dump(data);
+      console.log(data);
+      yaml_code.value = output;
+      document.location.hash = btoa(unescape(encodeURIComponent(output)));
+    } catch(error) { 
+      yaml_code.value = js_yaml.dump(error);
+   }
+  });
+
+  json_button.on('click', function (e) {
+    try { 
+      data = js_yaml.load(yaml_code.value);
+      console.log(data);
+      json_code.value = JSON.stringify(data);
+      document.location.hash = btoa(unescape(encodeURIComponent(yaml_code.value)));
+      if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) }
+    } catch(error) { 
+      json_code.value = JSON.stringify(error);
+   }
+  });
+
+  if(document.location.hash) {
+    yaml_code.value = decodeURIComponent(escape(atob(document.location.hash.replace(/^#/, ''))));
+  }
+  else {
+    yaml_code.value = decodeURIComponent(escape(atob("dGl0bGU6IFlBTUwgPD0+IEpTT04KYXBwbGU6IOiLueaenApiYW5hbmE6IOmmmeiViQpjaGVycnk6IOaoseahgwo=")));
+  }
+  data = js_yaml.load(yaml_code.value)
+  console.log(data);
+  json_code.value = JSON.stringify(data);
+  if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) }
+}
+
+},{"d3":2,"js-yaml":3}],2:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.16"
@@ -9553,7 +9605,7 @@
   });
   if (typeof define === "function" && define.amd) this.d3 = d3, define(d3); else if (typeof module === "object" && module.exports) module.exports = d3; else this.d3 = d3;
 }();
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
 
@@ -9562,7 +9614,7 @@ var yaml = require('./lib/js-yaml.js');
 
 module.exports = yaml;
 
-},{"./lib/js-yaml.js":3}],3:[function(require,module,exports){
+},{"./lib/js-yaml.js":4}],4:[function(require,module,exports){
 'use strict';
 
 
@@ -9603,7 +9655,7 @@ module.exports.parse          = deprecated('parse');
 module.exports.compose        = deprecated('compose');
 module.exports.addConstructor = deprecated('addConstructor');
 
-},{"./js-yaml/dumper":5,"./js-yaml/exception":6,"./js-yaml/loader":7,"./js-yaml/schema":9,"./js-yaml/schema/core":10,"./js-yaml/schema/default_full":11,"./js-yaml/schema/default_safe":12,"./js-yaml/schema/failsafe":13,"./js-yaml/schema/json":14,"./js-yaml/type":15}],4:[function(require,module,exports){
+},{"./js-yaml/dumper":6,"./js-yaml/exception":7,"./js-yaml/loader":8,"./js-yaml/schema":10,"./js-yaml/schema/core":11,"./js-yaml/schema/default_full":12,"./js-yaml/schema/default_safe":13,"./js-yaml/schema/failsafe":14,"./js-yaml/schema/json":15,"./js-yaml/type":16}],5:[function(require,module,exports){
 'use strict';
 
 
@@ -9664,7 +9716,7 @@ module.exports.repeat         = repeat;
 module.exports.isNegativeZero = isNegativeZero;
 module.exports.extend         = extend;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable no-use-before-define*/
@@ -10468,7 +10520,7 @@ function safeDump(input, options) {
 module.exports.dump     = dump;
 module.exports.safeDump = safeDump;
 
-},{"./common":4,"./exception":6,"./schema/default_full":11,"./schema/default_safe":12}],6:[function(require,module,exports){
+},{"./common":5,"./exception":7,"./schema/default_full":12,"./schema/default_safe":13}],7:[function(require,module,exports){
 // YAML error class. http://stackoverflow.com/questions/8458984
 //
 'use strict';
@@ -10513,7 +10565,7 @@ YAMLException.prototype.toString = function toString(compact) {
 
 module.exports = YAMLException;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable max-len,no-use-before-define*/
@@ -12101,7 +12153,7 @@ module.exports.load        = load;
 module.exports.safeLoadAll = safeLoadAll;
 module.exports.safeLoad    = safeLoad;
 
-},{"./common":4,"./exception":6,"./mark":8,"./schema/default_full":11,"./schema/default_safe":12}],8:[function(require,module,exports){
+},{"./common":5,"./exception":7,"./mark":9,"./schema/default_full":12,"./schema/default_safe":13}],9:[function(require,module,exports){
 'use strict';
 
 
@@ -12179,7 +12231,7 @@ Mark.prototype.toString = function toString(compact) {
 
 module.exports = Mark;
 
-},{"./common":4}],9:[function(require,module,exports){
+},{"./common":5}],10:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable max-len*/
@@ -12285,7 +12337,7 @@ Schema.create = function createSchema() {
 
 module.exports = Schema;
 
-},{"./common":4,"./exception":6,"./type":15}],10:[function(require,module,exports){
+},{"./common":5,"./exception":7,"./type":16}],11:[function(require,module,exports){
 // Standard YAML's Core schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2804923
 //
@@ -12305,7 +12357,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":9,"./json":14}],11:[function(require,module,exports){
+},{"../schema":10,"./json":15}],12:[function(require,module,exports){
 // JS-YAML's default schema for `load` function.
 // It is not described in the YAML specification.
 //
@@ -12332,7 +12384,7 @@ module.exports = Schema.DEFAULT = new Schema({
   ]
 });
 
-},{"../schema":9,"../type/js/function":20,"../type/js/regexp":21,"../type/js/undefined":22,"./default_safe":12}],12:[function(require,module,exports){
+},{"../schema":10,"../type/js/function":21,"../type/js/regexp":22,"../type/js/undefined":23,"./default_safe":13}],13:[function(require,module,exports){
 // JS-YAML's default schema for `safeLoad` function.
 // It is not described in the YAML specification.
 //
@@ -12362,7 +12414,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":9,"../type/binary":16,"../type/merge":24,"../type/omap":26,"../type/pairs":27,"../type/set":29,"../type/timestamp":31,"./core":10}],13:[function(require,module,exports){
+},{"../schema":10,"../type/binary":17,"../type/merge":25,"../type/omap":27,"../type/pairs":28,"../type/set":30,"../type/timestamp":32,"./core":11}],14:[function(require,module,exports){
 // Standard YAML's Failsafe schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2802346
 
@@ -12381,7 +12433,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":9,"../type/map":23,"../type/seq":28,"../type/str":30}],14:[function(require,module,exports){
+},{"../schema":10,"../type/map":24,"../type/seq":29,"../type/str":31}],15:[function(require,module,exports){
 // Standard YAML's JSON schema.
 // http://www.yaml.org/spec/1.2/spec.html#id2803231
 //
@@ -12408,7 +12460,7 @@ module.exports = new Schema({
   ]
 });
 
-},{"../schema":9,"../type/bool":17,"../type/float":18,"../type/int":19,"../type/null":25,"./failsafe":13}],15:[function(require,module,exports){
+},{"../schema":10,"../type/bool":18,"../type/float":19,"../type/int":20,"../type/null":26,"./failsafe":14}],16:[function(require,module,exports){
 'use strict';
 
 var YAMLException = require('./exception');
@@ -12471,7 +12523,7 @@ function Type(tag, options) {
 
 module.exports = Type;
 
-},{"./exception":6}],16:[function(require,module,exports){
+},{"./exception":7}],17:[function(require,module,exports){
 'use strict';
 
 /*eslint-disable no-bitwise*/
@@ -12608,7 +12660,7 @@ module.exports = new Type('tag:yaml.org,2002:binary', {
   represent: representYamlBinary
 });
 
-},{"../type":15}],17:[function(require,module,exports){
+},{"../type":16}],18:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -12645,7 +12697,7 @@ module.exports = new Type('tag:yaml.org,2002:bool', {
   defaultStyle: 'lowercase'
 });
 
-},{"../type":15}],18:[function(require,module,exports){
+},{"../type":16}],19:[function(require,module,exports){
 'use strict';
 
 var common = require('../common');
@@ -12752,7 +12804,7 @@ module.exports = new Type('tag:yaml.org,2002:float', {
   defaultStyle: 'lowercase'
 });
 
-},{"../common":4,"../type":15}],19:[function(require,module,exports){
+},{"../common":5,"../type":16}],20:[function(require,module,exports){
 'use strict';
 
 var common = require('../common');
@@ -12922,7 +12974,7 @@ module.exports = new Type('tag:yaml.org,2002:int', {
   }
 });
 
-},{"../common":4,"../type":15}],20:[function(require,module,exports){
+},{"../common":5,"../type":16}],21:[function(require,module,exports){
 'use strict';
 
 var esprima;
@@ -13008,7 +13060,7 @@ module.exports = new Type('tag:yaml.org,2002:js/function', {
   represent: representJavascriptFunction
 });
 
-},{"../../type":15}],21:[function(require,module,exports){
+},{"../../type":16}],22:[function(require,module,exports){
 'use strict';
 
 var Type = require('../../type');
@@ -13070,7 +13122,7 @@ module.exports = new Type('tag:yaml.org,2002:js/regexp', {
   represent: representJavascriptRegExp
 });
 
-},{"../../type":15}],22:[function(require,module,exports){
+},{"../../type":16}],23:[function(require,module,exports){
 'use strict';
 
 var Type = require('../../type');
@@ -13100,7 +13152,7 @@ module.exports = new Type('tag:yaml.org,2002:js/undefined', {
   represent: representJavascriptUndefined
 });
 
-},{"../../type":15}],23:[function(require,module,exports){
+},{"../../type":16}],24:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13110,7 +13162,7 @@ module.exports = new Type('tag:yaml.org,2002:map', {
   construct: function (data) { return data !== null ? data : {}; }
 });
 
-},{"../type":15}],24:[function(require,module,exports){
+},{"../type":16}],25:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13124,7 +13176,7 @@ module.exports = new Type('tag:yaml.org,2002:merge', {
   resolve: resolveYamlMerge
 });
 
-},{"../type":15}],25:[function(require,module,exports){
+},{"../type":16}],26:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13160,7 +13212,7 @@ module.exports = new Type('tag:yaml.org,2002:null', {
   defaultStyle: 'lowercase'
 });
 
-},{"../type":15}],26:[function(require,module,exports){
+},{"../type":16}],27:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13206,7 +13258,7 @@ module.exports = new Type('tag:yaml.org,2002:omap', {
   construct: constructYamlOmap
 });
 
-},{"../type":15}],27:[function(require,module,exports){
+},{"../type":16}],28:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13261,7 +13313,7 @@ module.exports = new Type('tag:yaml.org,2002:pairs', {
   construct: constructYamlPairs
 });
 
-},{"../type":15}],28:[function(require,module,exports){
+},{"../type":16}],29:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13271,7 +13323,7 @@ module.exports = new Type('tag:yaml.org,2002:seq', {
   construct: function (data) { return data !== null ? data : []; }
 });
 
-},{"../type":15}],29:[function(require,module,exports){
+},{"../type":16}],30:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13302,7 +13354,7 @@ module.exports = new Type('tag:yaml.org,2002:set', {
   construct: constructYamlSet
 });
 
-},{"../type":15}],30:[function(require,module,exports){
+},{"../type":16}],31:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13312,7 +13364,7 @@ module.exports = new Type('tag:yaml.org,2002:str', {
   construct: function (data) { return data !== null ? data : ''; }
 });
 
-},{"../type":15}],31:[function(require,module,exports){
+},{"../type":16}],32:[function(require,module,exports){
 'use strict';
 
 var Type = require('../type');
@@ -13402,56 +13454,4 @@ module.exports = new Type('tag:yaml.org,2002:timestamp', {
   represent: representYamlTimestamp
 });
 
-},{"../type":15}],32:[function(require,module,exports){
-d3 = require('d3');
-js_yaml = require('js-yaml');
-
-window.onload = function () {
-  content = d3.select('body').append('div').style({"margin":"1em","padding":"1em"});
-
-  yaml_div = content.append('div');
-  yaml_code = yaml_div.append('textarea').attr({"rows":20}).style({"width":"100%"}).node();
-
-  json_button = content.append('button').html('yaml to json').style({margin: '1em'});
-  yaml_button = content.append('button').html('json to yaml').style({margin: '1em'});
-
-  json_div = content.append('div');
-  json_code = json_div.append('textarea').attr({"rows":20}).style({"width":"100%"}).node();
-
-  yaml_button.on('click', function (e) {
-    try { 
-      data = JSON.parse(json_code.value);
-      var output = js_yaml.dump(data);
-      console.log(data);
-      yaml_code.value = output;
-      document.location.hash = btoa(unescape(encodeURIComponent(output)));
-    } catch(error) { 
-      yaml_code.value = js_yaml.dump(error);
-   }
-  });
-
-  json_button.on('click', function (e) {
-    try { 
-      data = js_yaml.load(yaml_code.value);
-      console.log(data);
-      json_code.value = JSON.stringify(data);
-      document.location.hash = btoa(unescape(encodeURIComponent(yaml_code.value)));
-      if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) }
-    } catch(error) { 
-      json_code.value = JSON.stringify(error);
-   }
-  });
-
-  if(document.location.hash) {
-    yaml_code.value = decodeURIComponent(escape(atob(document.location.hash.replace(/^#/, ''))));
-  }
-  else {
-    yaml_code.value = decodeURIComponent(escape(atob("dGl0bGU6IFlBTUwgPD0+IEpTT04KYXBwbGU6IOiLueaenApiYW5hbmE6IOmmmeiViQpjaGVycnk6IOaoseahgwo=")));
-  }
-  data = js_yaml.load(yaml_code.value)
-  console.log(data);
-  json_code.value = JSON.stringify(data);
-  if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) }
-}
-
-},{"d3":1,"js-yaml":2}]},{},[32]);
+},{"../type":16}]},{},[1]);

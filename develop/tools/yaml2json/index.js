@@ -2,7 +2,7 @@ d3 = require('d3');
 js_yaml = require('js-yaml');
 
 window.onload = function () {
-  content = d3.select('body').append('div').style({"margin":"1em","padding":"1em"});
+  content = d3.select('#content').style({"margin":"1em","padding":"1em"});
 
   yaml_div = content.append('div');
   yaml_code = yaml_div.append('textarea').attr({"rows":20}).style({"width":"100%"}).node();
