@@ -29,5 +29,4 @@ window.onload = function () {
   else {
     yaml_code.value = decodeURIComponent(escape(atob("dGl0bGU6IEFCQwphcHBsZTog6Iu55p6cCmJhbmFuYTog6aaZ6JWJCmNoZXJyeTog5qix5qGDCnJ1bjogfAogIGJvZHkgPSBkMy5zZWxlY3QoJ2JvZHknKTsKICBkbCA9IGJvZHkuYXBwZW5kKCdkbCcpOwogIGZvciAoayBpbiBkYXRhKSB7CiAgICBkbC5hcHBlbmQoJ2R0JykuaHRtbChrKTsKICAgIGRsLmFwcGVuZCgnZGQnKS5hcHBlbmQoJ3ByZScpLmh0bWwoZGF0YVtrXSkKICB9Cg==")));
   }
-  if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) }
 }
