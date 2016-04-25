@@ -1,0 +1,2 @@
+#!/bin/sh
+browserify index.js > main.js
