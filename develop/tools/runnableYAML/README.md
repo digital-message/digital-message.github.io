@@ -1,1 +1,1 @@
-- https://www.digital-message.com/develop/tools/yaml2json/
+- https://www.digital-message.com/develop/tools/rannableYAML
