@@ -6,47 +6,7 @@ window.onload = function () {
 
   yaml_div = content.append('div');
   yaml_code = yaml_div.append('textarea').attr({"rows":40}).style({"width":"100%"}).node();
-  yaml_code.value = `
-attr:
-  xmlns : 'http://www.w3.org/2000/svg'
-  version : 1.1
-  width : 250
-  height : 250
-element:
-  -
-    tag : rect
-    attr : 
-      x : 25
-      y : 25
-      width : 200
-      height : 200
-      fill : lime
-      stroke-width : 4
-      stroke : pink
-  - 
-    tag : circle
-    attr :
-      cx : 125
-      cy : 125
-      r :  75
-      fill : orange
-  -
-    tag : polyline 
-    attr: 
-      points : '50,150 50,200 200,200 200,100'
-      stroke : red
-      stroke-width : 4
-      fill : none
-  -    
-    tag : line
-    attr:  
-      x1 : 50
-      y1 : 50
-      x2 : 200
-      y2 : 200
-      stroke : blue
-      stroke-width : 4
-`;
+  d3.text('sample.yaml', function (e, d) { yaml_code.value = d });
 
   button = content.append('button').html('View SVG and code').style({margin: '1em'});
   output = d3.select('#content').append('div');
