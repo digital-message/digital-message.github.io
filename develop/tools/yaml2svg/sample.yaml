@@ -1,43 +1,43 @@
 attr:
-  width : 250
-  height : 250
+  width: 250
+  height: 250
 element:
-  - tag : rect
-    attr : 
-      x : 25
-      y : 25
-      width : 200
-      height : 200
-      fill : lime
-      stroke-width : 4
-      stroke : pink
-  - tag : circle
-    attr :
-      cx : 125
-      cy : 125
-      r :  75
-      fill : orange
-  - tag : polyline 
+  - tag: rect
     attr: 
-      points : '50,150 50,200 200,200 200,100'
-      stroke : red
-      stroke-width : 4
-      fill : none
-  - tag : line
+      x: 25
+      y: 25
+      width: 200
+      height: 200
+      fill: lime
+      stroke-width: 4
+      stroke: pink
+  - tag: circle
+    attr:
+      cx: 125
+      cy: 125
+      r:  75
+      fill: orange
+  - tag: polyline 
+    attr: 
+      points: 50,150 50,200 200,200 200,100
+      stroke: red
+      stroke-width: 4
+      fill: none
+  - tag: line
     attr:  
-      x1 : 50
-      y1 : 50
-      x2 : 200
-      y2 : 200
-      stroke : blue
-      stroke-width : 4
-  - tag : text
-    attr :
-      x : 120
-      y : 120
-      font-family : monospace
-      font-size : 20
-      text-anchor : middle
-      fill : white
-    text : Hello world
+      x1: 50
+      y1: 50
+      x2: 200
+      y2: 200
+      stroke: blue
+      stroke-width: 4
+  - tag: text
+    attr:
+      x: 125
+      y: 125
+      font-family: monospace
+      font-size: 20
+      text-anchor: middle
+      fill: white
+    text: Hello world
 
