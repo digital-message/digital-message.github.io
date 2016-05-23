@@ -10,7 +10,13 @@ window.onload = function () {
     .attr('spellcheck', false)
     .style('width', '100%')
     .node();
-  d3.text('sample.yaml', function (e, d) { yaml_code.value = d });
+
+  if(document.location.hash) {
+    yaml_code.value = decodeURIComponent(escape(atob(document.location.hash.replace(/^#/, ''))));
+  }
+  else {
+    d3.text('sample.yaml', function (e, d) { yaml_code.value = d });
+  }
 
   button = content.append('button').html('View SVG and code').style({margin: '1em'});
   output = d3.select('#content').append('div');
@@ -29,6 +35,7 @@ window.onload = function () {
         if (e.hasOwnProperty('text')){ tag.text(e.text); }
       }
       output.append('div').style('color', 'green').text(svg.node().outerHTML);
+      document.location.hash = btoa(unescape(encodeURIComponent(yaml_code.value)));
     } catch(error) { 
       yaml_code.value = js_yaml.dump(error);
    }
