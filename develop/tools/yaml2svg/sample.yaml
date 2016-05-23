@@ -37,3 +37,13 @@ element:
       y2 : 200
       stroke : blue
       stroke-width : 4
+  -
+    tag : text
+    attr :
+      x : 120
+      y : 120
+      font-family : monospace
+      font-size : 20
+      text-anchor : middle
+      fill : white
+    text : Hello world
