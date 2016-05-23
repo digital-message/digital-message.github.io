@@ -20,18 +20,10 @@ element:
       fill: orange
   - tag: polyline 
     attr: 
-      points: 50,150 50,200 200,200 200,100
+      points: 50,125 50,200 200,200 200,125
       stroke: red
       stroke-width: 4
       fill: none
-  - tag: line
-    attr:  
-      x1: 50
-      y1: 50
-      x2: 200
-      y2: 200
-      stroke: blue
-      stroke-width: 4
   - tag: text
     attr:
       x: 125
@@ -39,6 +31,11 @@ element:
       font-family: monospace
       font-size: 20
       text-anchor: middle
-      fill: white
+      fill: black
     text: Hello world
-
+  - tag: path
+    attr:
+      d: M50 125 c 25 -60 50 -60 75 0 c 25 60 50 60 75 0
+      fill: none
+      stroke-width: 4
+      stroke: white
