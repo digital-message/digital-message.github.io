@@ -5,7 +5,11 @@ window.onload = function () {
   content = d3.select('#content').style({"margin":"1em","padding":"1em"});
 
   yaml_div = content.append('div');
-  yaml_code = yaml_div.append('textarea').attr({"rows":50}).style({"width":"100%"}).node();
+  yaml_code = yaml_div.append('textarea')
+    .attr('rows',50)
+    .attr('spellcheck', false)
+    .style('width', '100%')
+    .node();
   d3.text('sample.yaml', function (e, d) { yaml_code.value = d });
 
   button = content.append('button').html('View SVG and code').style({margin: '1em'});
