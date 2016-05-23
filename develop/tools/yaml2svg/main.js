@@ -16,6 +16,8 @@ window.onload = function () {
       data = js_yaml.load(yaml_code.value)
       output.html('');
       var svg = output.append('svg');
+      svg.attr('xmlns', 'http://www.w3.org/2000/svg');
+      svg.attr('version', '1.1');
       svg.attr(data.attr);
       for(i in data.element) {
         var e = data.element[i];
