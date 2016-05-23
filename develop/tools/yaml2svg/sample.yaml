@@ -24,6 +24,12 @@ element:
       stroke: red
       stroke-width: 4
       fill: none
+  - tag: path
+    attr:
+      d: M50 125 c 25 -60 50 -60 75 0 c 25 60 50 60 75 0
+      fill: none
+      stroke-width: 4
+      stroke: white
   - tag: text
     attr:
       x: 125
@@ -33,9 +39,3 @@ element:
       text-anchor: middle
       fill: black
     text: Hello world
-  - tag: path
-    attr:
-      d: M50 125 c 25 -60 50 -60 75 0 c 25 60 50 60 75 0
-      fill: none
-      stroke-width: 4
-      stroke: white
