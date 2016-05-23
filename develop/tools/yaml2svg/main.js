@@ -24,6 +24,7 @@ window.onload = function () {
   button.on('click', function (e) {
     try { 
       data = js_yaml.load(yaml_code.value)
+      if(data.hasOwnProperty('title')) { d3.select('title').html(data['title']) };
       output.html('');
       var svg = output.append('svg');
       svg.attr('xmlns', 'http://www.w3.org/2000/svg');
