@@ -1,0 +1,11 @@
+title: ABC
+apple: 苹果
+banana: 香蕉
+cherry: 樱桃
+run: |
+  output = d3.select('#output').html('');
+  dl = output.append('dl');
+  for (k in data) {
+    dl.append('dt').html(k);
+    dl.append('dd').append('pre').html(data[k])
+  }
