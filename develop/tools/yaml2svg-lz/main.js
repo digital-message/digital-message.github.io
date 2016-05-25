@@ -46,7 +46,7 @@ window.onload = function () {
         tag.attr(e.attr);
         if (e.hasOwnProperty('text')){ tag.text(e.text); }
       }
-      if(data.hasOwnProperty('run')) { eval(data.run); }
+      if(data.hasOwnProperty('js')) { eval(data.js); }
       output.append('div')
         .style('margin', '1em')
         .style('color', 'green')
