@@ -39,3 +39,12 @@ element:
       text-anchor: middle
       fill: black
     text: Hello world
+js: |
+  d3.select('path')
+    .transition(1000)
+    .delay(1000)
+    .attr('d', 'M50 125 c 25 60 50 60 75 0 c 25 -60 50 -60 75 0')
+    .each('end', function () { 
+      d3.select('circle').transition(1000).attr('fill', 'blue');
+      d3.select('text').transition(1000).attr('fill', 'yellow');
+    });
