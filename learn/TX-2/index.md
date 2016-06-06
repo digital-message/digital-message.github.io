@@ -1,9 +1,9 @@
 ---
 layout: default
-title: TX-2 Triumvirate
+title: TX-2 Triumvirate (1963)
 ---
 
-# TX-2 Triumvirate
+# TX-2 Triumvirate (1963)
 
 [Wikipedia](https://en.wikipedia.org/wiki/TX-2)
 
