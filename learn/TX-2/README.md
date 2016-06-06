@@ -1,4 +1,4 @@
-# TX-2 Triumvirate
+# TX-2 Triumvirate 
 
 [Wikipedia](https://en.wikipedia.org/wiki/TX-2)
 
@@ -11,3 +11,5 @@
 - [Message Delay in Communication Nets with Storage](Kleinrock.pdf) (Leonard Kleinrock)
 - [Machine Perception of Three-dimensional Solids](Roberts.pdf) (Lawrence Gilman Roberts)
 - [Sketchpad, a Man-machine Graphical Communication System](Sutherland.pdf) (Ivan Edward Sutherland)
+
+https://www.digital-message.com/learn/TX-2
